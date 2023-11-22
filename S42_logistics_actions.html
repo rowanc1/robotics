@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -530,7 +531,7 @@ p^i_y &amp;= R \sin(\theta^i) \\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/e5a0abb219fc220b20090f5cf935ade647baa160eef812ab74936c05fc3520e0.png" src="_images/e5a0abb219fc220b20090f5cf935ade647baa160eef812ab74936c05fc3520e0.png" />
+<img alt="_images/1120d6b1c4caf9968a15733975cc98a65a864645c46249fe8cc49dce9691e4b0.png" src="_images/1120d6b1c4caf9968a15733975cc98a65a864645c46249fe8cc49dce9691e4b0.png" />
 </div>
 </div>
 </section>
@@ -548,8 +549,8 @@ and <span class="math notranslate nohighlight">\(u_\perp\)</span> (slipping dire
 These vectors define an orthogonal decomposition of the robot’s motion.
 The wheel actuators directly produce motion in the direction <span class="math notranslate nohighlight">\(u_\|\)</span>,
 and the robot moves freely in the direction <span class="math notranslate nohighlight">\(u_\perp\)</span>.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures4/omni-wheel-frame.png?raw=1" id="fig:omni-wheel-frame" style="width:14cm" alt="">
+<figure id="fig:omni-wheel-frame">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures4/omni-wheel-frame.png?raw=1" style="width:14cm" alt="">
 <figcaption>Orthogonal coordinate frame for a single omni-wheel.</figcaption>
 </figure>
 <p>The vectors <span class="math notranslate nohighlight">\(u_\|\)</span> and <span class="math notranslate nohighlight">\(u_\perp\)</span>
@@ -568,8 +569,8 @@ Suppose that the robot, and therefore this specific wheel,
 moves with  the <strong>translational velocity</strong> <span class="math notranslate nohighlight">\(v=(v_x, v_y)\)</span>, as shown in the figure below.
 We can decompose the velocity <span class="math notranslate nohighlight">\(v\)</span> into components that are parallel and perpendicular to the
 steering direction by projecting <span class="math notranslate nohighlight">\(v\)</span> onto the vectors <span class="math notranslate nohighlight">\(u_\|\)</span> and <span class="math notranslate nohighlight">\(u_\perp\)</span>.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures4/wheel-velocity.png?raw=1" id="fig:wheel-velocity" style="width:14cm" alt="">
+<figure id="fig:wheel-velocity">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures4/wheel-velocity.png?raw=1" style="width:14cm" alt="">
 <figcaption>Wheel velocity v.</figcaption>
 </figure>
 <p>In particular, we can write</p>
@@ -647,7 +648,7 @@ of the unit vectors <span class="math notranslate nohighlight">\(u_\|\)</span> a
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/af5f4735d14ef59aa7a7a28859e7ebbcbd35d8ff38cab2a23a7e854b35c21237.png" src="_images/af5f4735d14ef59aa7a7a28859e7ebbcbd35d8ff38cab2a23a7e854b35c21237.png" />
+<img alt="_images/b7d139c8142d52c48f707eed8832c782e25e4a11347ee829cf4fa73ed97478e5.png" src="_images/b7d139c8142d52c48f707eed8832c782e25e4a11347ee829cf4fa73ed97478e5.png" />
 </div>
 </div>
 </section>
@@ -827,7 +828,7 @@ p(x_{k+1}|x_{k}, u_k) = \mathcal{N}(x_{k+1};\mu=A x_{k} + B u_k, \Sigma=Q)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2a070e55479436f89b9484c9340f75c834318b7a78c8e8fdaf3a4124b1a256e4.svg" src="_images/2a070e55479436f89b9484c9340f75c834318b7a78c8e8fdaf3a4124b1a256e4.svg" /></div>
+<img alt="_images/be865e4f94a432070f6736c273ec6c9f097ef76e827f14e4d0d31af7be6bd262.svg" src="_images/be865e4f94a432070f6736c273ec6c9f097ef76e827f14e4d0d31af7be6bd262.svg" /></div>
 </div>
 <section id="exercise">
 <h3><span class="section-number">4.2.7.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
@@ -1068,8 +1069,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

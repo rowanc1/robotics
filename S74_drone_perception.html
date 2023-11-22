@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -584,7 +585,7 @@ Every 5 steps we then add an <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f175b2e53594297b11de038861eae7e155babd514b89aac7f752a832bcc61cd3.svg" src="_images/f175b2e53594297b11de038861eae7e155babd514b89aac7f752a832bcc61cd3.svg" /></div>
+<img alt="_images/be1f825540637f3c853bec30068042a5e2178d1d64c5ad1be7505c1e7674ce1e.svg" src="_images/be1f825540637f3c853bec30068042a5e2178d1d64c5ad1be7505c1e7674ce1e.svg" /></div>
 </div>
 <p>We can optimize even <em>without</em> any external measurements, but unless you pay for a very expensive IMU, your estimate will drift very rapidly.</p>
 <div class="cell docutils container">
@@ -600,8 +601,8 @@ Every 5 steps we then add an <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>initial error: 12406814.240161492
-final error: 2.5297527184138232e-23
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>initial error: 24475132.36255632
+final error: 9.997925671918537e-24
 </pre></div>
 </div>
 </div>
@@ -618,7 +619,7 @@ final error: 2.5297527184138232e-23
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4d9c5cf15dcdaaa8ab30b7f01f746fd7ae2a56dee175a7306921f8de0ffda9b7.png" src="_images/4d9c5cf15dcdaaa8ab30b7f01f746fd7ae2a56dee175a7306921f8de0ffda9b7.png" />
+<img alt="_images/23c1e848be5e8354d29d72fc17cb5f2fa451f7011524a7cf2139f26737e44b8a.png" src="_images/23c1e848be5e8354d29d72fc17cb5f2fa451f7011524a7cf2139f26737e44b8a.png" />
 </div>
 </div>
 </section>
@@ -679,7 +680,7 @@ final error: 2.5297527184138232e-23
 <span class="n">structure</span> <span class="o">=</span> <span class="p">(</span><span class="n">wRb</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span> <span class="o">@</span> <span class="n">structure</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">z</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">z</span><span class="o">=</span><span class="n">structure</span><span class="p">[</span><span class="n">valid</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">),</span> <span class="n">showlegend</span><span class="o">=</span> <span class="kc">False</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">scaleanchor</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">scaleratio</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -809,8 +810,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

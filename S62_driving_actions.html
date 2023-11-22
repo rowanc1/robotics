@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -470,8 +471,8 @@ as shown in the figure below.
 If the tires roll without slipping, the instantaneous velocity of the car is always in the direction of
 the body-attached <span class="math notranslate nohighlight">\(x\)</span>-axis.
 We denote the forward speed by <span class="math notranslate nohighlight">\(v_\mathrm{car}\)</span>.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car1.png?raw=1" id="fig:TransformComposition" style="width:8cm" alt="">
+<figure id="fig:TransformComposition">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car1.png?raw=1" style="width:8cm" alt="">
 <figcaption>Coordinate frame for a car-like vehicle. </figcaption>
 </figure>
 <p>At first glance, it may appear that the two front wheels have the same orientation w.r.t. the car frame.
@@ -490,11 +491,10 @@ at the midpoint between the two front wheels, rolling in a direction perpendicul
 the center of the turning circle to this midpoint.
 We denote by <span class="math notranslate nohighlight">\(\phi\)</span> the angle from the car <span class="math notranslate nohighlight">\(x\)</span>-axis to the forward direction of this virtual wheel,
 as shown in the figure below.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/ackermann1.PNG?raw=1" id="fig:TransformComposition" style="width:8cm" alt="">
-\hspace{0.1in}
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car2.png?raw=1" id="fig:TransformComposition" style="width:8cm" alt="">
-<figcaption>Ackermann steering (left), and virtual wheel used to model Ackermann steering (right). </figcaption>
+<figure id="fig:TransformComposition">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/ackermann1.PNG?raw=1"  style="width:8cm" alt="">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car2.png?raw=1" style="width:8cm" alt="">
+<figcaption>Ackermann steering (left), and virtual wheel used to model Ackermann steering (right).</figcaption>
 </figure><p>The configuration of the car can be represented as <span class="math notranslate nohighlight">\(q = (x,y,\theta, \phi)\)</span>, in which <span class="math notranslate nohighlight">\(x,y\)</span> denotes the position
 of the origin of the car frame, <span class="math notranslate nohighlight">\(\theta\)</span> denotes the orientation of car frame (the angle from the world <span class="math notranslate nohighlight">\(x\)</span>-axis
 to the car frame <span class="math notranslate nohighlight">\(x\)</span>-axis), and <span class="math notranslate nohighlight">\(\phi\)</span> denotes the steering angle.
@@ -503,8 +503,8 @@ The inputs to the car are</p>
 <li><p><span class="math notranslate nohighlight">\(u_1= v_\mathrm{car}\)</span>, the linear speed of the car, and</p></li>
 <li><p><span class="math notranslate nohighlight">\(u_2 = \dot{\phi}\)</span>, the turning rate of the virtual front wheel.</p></li>
 </ul>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car3.png?raw=1" id="fig:TransformComposition" style="width:12cm" alt="">
+<figure id="fig:TransformComposition">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car3.png?raw=1" style="width:12cm" alt="">
 <figcaption>Configuration parameters for the car. </figcaption>
 </figure></section>
 <section id="differential-kinematics">
@@ -574,8 +574,8 @@ u_1
 \end{bmatrix}
 u_2
 \end{split}\]</div>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car4.png?raw=1" id="fig:TransformComposition" style="width:12cm" alt="">
+<figure id="fig:TransformComposition">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/car4.png?raw=1" style="width:12cm" alt="">
 <figcaption>Relevant velocities for computing the differential kinamatics of the car. </figcaption>
 </figure></section>
 </section>
@@ -692,8 +692,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

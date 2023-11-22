@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -503,8 +504,8 @@ description of how to perform the task, but it provides a high-level
 description of the sub-tasks that the robot must execute to accomplish
 its end goal. In later chapters, we will see how this kind of planning
 works in detail.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures1/blocks-world.jpg?raw=1" title="fig:" id="fig:blocks-world" style="width:12.5cm" alt=""/>
+<figure id="fig:blocks-world">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures1/blocks-world.jpg?raw=1" style="width:12.5cm" alt=""/>
 <figcaption>An example from the Blocks World. (a) A simple blocks world scene. (b) The symbolic description of the world state.
 </figcaption>
 </figure>
@@ -532,14 +533,14 @@ describe how to build an occupancy-grid map from sensor data, how the
 robot can determine its location in the map, how graph search algorithms
 can be used to construct a path from start to goal, and how the robot
 can execute this plan to navigate in its environment.</p>
-<figure>
+<figure id="fig:chap1-occupancy-grid">
 <div class="row">
   <div class="column">
-    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/occupancy-grid.jpg?raw=1" title="fig:" id="fig:chap1-occupancy-grid" style="width:5.5cm" alt="" />
+    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/occupancy-grid.jpg?raw=1" title="fig:" style="width:5.5cm" alt="" />
     <p class="center">(a)</p>
   </div>
   <div class="column">
-    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/occupancy-grid-plan.jpg?raw=1" title="fig:" id="fig:chap1-occupancy-grid" style="width:5.5cm" alt="" />
+    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/occupancy-grid-plan.jpg?raw=1" title="fig:" style="width:5.5cm" alt="" />
     <p class="center">(b)</p>
   </div>
 </div>
@@ -566,14 +567,14 @@ sensors. In later chapters, we will describe in detail the geometric
 computations required for this kind of task, as well as how sensors can
 be used to determine relevant geometric aspects of the world, including
 the positions and orientations of objects in the robot’s work space.</p>
-<figure>
+<figure id="fig:chap1-king-frame">
 <div class="row">
   <div class="column">
-    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/king-frame.jpg?raw=1" title="fig:" id="fig:chap1-king-frame" style="height:9cm" alt="" />
+    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/king-frame.jpg?raw=1" style="height:9cm" alt="" />
     <p class="center">(a)</p>
   </div>
   <div class="column">
-    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/king-frame-rotated.jpg?raw=1" title="fig:" id="fig:chap1-king-frame" style="height:9cm" alt="" />
+    <img src="https://github.com/gtbook/robotics/blob/main/Figures1/king-frame-rotated.jpg?raw=1" style="height:9cm" alt="" />
     <p class="center">(b)</p>
   </div>
 </div>
@@ -613,8 +614,8 @@ environment, but even to the motion of the robot itself. This is the
 case for robot arms, whose motion depends on torques generated by
 motors, and for unmanned air vehicles (UAVs) such as quadrotors, whose
 motion depends on aerodynamic forces generated by spinning propellers.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures1/projectile.jpg?raw=1" title="fig:" id="fig:chap1-projectile" style="width:12.5cm" alt="" />
+<figure id="fig:chap1-projectile">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures1/projectile.jpg?raw=1" style="width:12.5cm" alt="" />
 <figcaption>The motion of a ball follows the arc of a parabola. Given the position and velocity at any moment in time, it is possible to exactly predict the position and velocity at any future moment in time.
 </figcaption>
 </figure>
@@ -660,7 +661,7 @@ respect to a floor plan of the house. For a robot arm, Figure
 <a href="#fig:chap1-four-robots" data-reference-type="ref" data-reference="fig:chap1-four-robots">5</a>b,
 we might specify a vector of joint angles. For a UAV, Figure
 <a href="#fig:chap1-four-robots" data-reference-type="ref" data-reference="fig:chap1-four-robots">5</a>c,
-we might specifiy the <span class="math notranslate nohighlight">\(x,y,z\)</span> coordinates of the vehicle, along with its
+we might specify the <span class="math notranslate nohighlight">\(x,y,z\)</span> coordinates of the vehicle, along with its
 orientation. For a humanoid robot, Figure
 <a href="#fig:chap1-four-robots" data-reference-type="ref" data-reference="fig:chap1-four-robots">5</a>d,
 we might specify the position and orientation of the torso’s centroid,
@@ -670,8 +671,8 @@ robotics, all of these correspond to the general notion of a robot’s
 provides a complete specification of the location of every point on the
 robot with respect to a reference frame. The set of all configurations
 is called the <em>configuration space</em>, and is denoted by <span class="math notranslate nohighlight">\(\cal Q\)</span>.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures1/four-robot-cspaces.jpg?raw=1" title="fig:" id="fig:chap1-four-robots" style="width:12.5cm" alt="" />
+<figure id="fig:chap1-four-robots">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures1/four-robot-cspaces.jpg?raw=1" style="width:12.5cm" alt="" />
 <figcaption>Configurations for for different robots. (a) A vacuum cleaning robot whose configuration is specified by x,y coordinates in the world frame. (b) A two-link robot arm, whose configuration is specified by its two joint angles (<i>&theta;<sub>1</sub>,&theta;<sub>2</sub></i>). (c) A quadrotor, whose configuration is specified by three position parameters x,y,z and three orientation parameters <i>&phi;,&theta;,&psi;</i>. (d) A humanoid robot whose configuration is specified by the position and orientation of the body-attached frame <i>x,y,z,&phi;,&theta;,&psi;</i> and the joint angles in the legs <i>&theta;<sub>1</sub>, &theta;<sub>2</sub>, &theta;<sub>3</sub>, &theta;<sub>4</sub></i>.
 </figcaption>
 </figure><p>A common way to define a robot’s configuration is to rigidly attach a
@@ -846,8 +847,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

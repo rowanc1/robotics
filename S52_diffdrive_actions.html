@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -492,8 +493,8 @@ v^{\mathrm{body}}=
 v^{\mathrm{world}}=
 \begin{bmatrix} v_x \cos \theta \\ v_x \sin \theta \\ \dot{\theta} \end{bmatrix}
 \end{split}\]</div>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-velocity.png?raw=1" id="fig:DDR-velocity" style="width:9cm" alt="">
+<figure id="fig:DDR-velocity">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-velocity.png?raw=1" style="width:9cm" alt="">
 <figcaption>The linear velocity is always in the steering direction.</figcaption>
 </figure>
 <section id="the-relationship-between-wheel-rotation-and-robot-velocity">
@@ -517,8 +518,8 @@ v_\mathrm{right} = r \dot{\phi}_R
 \[
 v_\mathrm{left} = r \dot{\phi}_L
 \]</div>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-one-wheel.png?raw=1" id="fig:DDR-one-wheel" style="width:9cm" alt="">
+<figure id="fig:DDR-one-wheel">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-one-wheel.png?raw=1" style="width:9cm" alt="">
 <figcaption>The linear velocity is always in the steering direction.</figcaption>
 </figure>
 <p>Suppose now that both wheels spin at the same speed, <span class="math notranslate nohighlight">\(\dot{\phi}_R = \dot{\phi}_L\)</span>.
@@ -531,8 +532,8 @@ Using the results above, we obtain</p>
 \[
 \dot{\phi}_L = \dot{\phi}_R = \frac{v_x}{r}
 \]</div>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-pure-translation.png?raw=1" id="fig:DDR-pure-translation" style="width:9cm" alt="">
+<figure id="fig:DDR-pure-translation">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-pure-translation.png?raw=1" style="width:9cm" alt="">
 <figcaption>When the wheels spin in the same direction with the same speed, the robot moves with pure translation.</figcaption>
 </figure><p>Suppose instead that the two wheels spin in opposite directions,
 so that <span class="math notranslate nohighlight">\(\dot{\phi}_R = -\dot{\phi}_L\)</span>.
@@ -556,8 +557,8 @@ Applying the equation of circular motion yields</p>
 ~~~~~~~
 \dot{\phi}_R= \frac{L}{2} \frac{\omega}{r}
 \]</div>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-pure-rotation.png?raw=1" id="fig:DDR-pure-rotation" style="width:9cm" alt="">
+<figure id="fig:DDR-pure-rotation">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures5/DDR-pure-rotation.png?raw=1" style="width:9cm" alt="">
 <figcaption>When the wheels spin in the opposite direction with the same speed, the robot moves with pure rotation..</figcaption>
 </figure>
 <p>We have now considered the two special cases of pure translation and pure rotation.
@@ -762,8 +763,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

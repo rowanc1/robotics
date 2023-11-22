@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -157,13 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Robotics and Perception - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Robotics and Perception - Home"/>`);</script>
   
   
 </a></div>
@@ -466,12 +467,14 @@ document.write(`
 <div><p>SLAM is “Simultaneous Localization and Mapping”, a key capability for mobile robots.</p>
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/S64-Autonomous_Vehicle_with_LIDAR_and_cameras-03.jpg"><img alt="Splash image with steampunk autonomous car" class="align-center" src="_images/S64-Autonomous_Vehicle_with_LIDAR_and_cameras-03.jpg" style="width: 40%;" /></a>
+<p>When an autonomous vehicle explores a new environment, we want to simultaneously build a map of this environment, and localize ourselves in it. That capability is known as “Simultaneous Localization and Mapping” or <strong>SLAM</strong>. It is a bit like a chicken and egg problem: if we knew the map, we could use the localization techniques we studied in Section 4.4, e.g., Monte Carlo Localization. Conversely, if we were already localized, it would not be too hard to create a map: if we have a LIDAR sensor, we could simply transform the points from the LIDAR frame into the world frame. But now we have to do <em>both</em> at the same time! Is that even possible?</p>
+<p>In this section we show that this <em>is</em> possible, and we expand upon two different SLAM techniques: PoseSLAM and SLAM with landmarks. In the former we concentrate on estimating our motion from a rich sensor such as LIDAR, and building the map is generated as a side effect. In the latter, we truly optimize for both the location of the vehicle and the location of a observed landmarks, which constitute a sparse map of the environment. Before we do, we review the math of vehicle poses in 2D, and discuss ICP, a seminal algorithm for aligning two point clouds that we use as a building block in PoseSLAM.</p>
 <section id="poses-in-2d-and-3d">
 <h2><span class="section-number">6.4.1. </span>Poses in 2D and 3D<a class="headerlink" href="#poses-in-2d-and-3d" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>SE(2) generalizes to SE(3).</p>
 </div></blockquote>
-<p>To represent the pose of a vehicle, recall that 2D poses
+<p>In both SLAM variants we need to optimize over the pose of a vehicle, and to keep things simple, we will concentrate on poses in the plane for now. Recall from Section 6.1 that 2D poses
 <span class="math notranslate nohighlight">\(T\doteq(x,y,\theta)\)</span> form the Special Euclidean group <span class="math notranslate nohighlight">\(SE(2)\)</span>, and
 can be represented by <span class="math notranslate nohighlight">\(3\times3\)</span> matrix of the form</p>
 <div class="math notranslate nohighlight">
@@ -488,8 +491,17 @@ R &amp; t\\
 <p>with the <span class="math notranslate nohighlight">\(2\times1\)</span> vector <span class="math notranslate nohighlight">\(t\)</span>
 representing the position of the vehicle, and <span class="math notranslate nohighlight">\(R\)</span> the <span class="math notranslate nohighlight">\(2\times2\)</span>
 rotation matrix representing the vehicle’s orientation in the plane.</p>
+<p>Below it is important to understand what coordinate frames are involved, and hence we insist on always annotating the transformation matrices with indices indicating the reference frame as superscript and the frame under consideration using subscript. It always helps how points in one frame are transformed into the other. As an example, the following illustrates how points in the frame <span class="math notranslate nohighlight">\(B\)</span> are transformed into the reference frame <span class="math notranslate nohighlight">\(A\)</span> by referring to the pose <span class="math notranslate nohighlight">\(T^a_b\)</span> of frame <span class="math notranslate nohighlight">\(B\)</span> in <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P^a = \left[\begin{array}{cc}
+R^a_b &amp; t^a_b\\
+0 &amp; 1
+\end{array}\right] P^b = T^a_b P^b 
+\end{split}\]</div>
+<p>A good rule to keep in mind, illustrated above, is that the superscript <span class="math notranslate nohighlight">\(b\)</span> of the point <span class="math notranslate nohighlight">\(P^b\)</span> on the right-hand side is <em>canceled</em> by the subscript <span class="math notranslate nohighlight">\(b\)</span> in the pose <span class="math notranslate nohighlight">\(T^a_b\)</span>, and so the left-hand side <span class="math notranslate nohighlight">\(P^a\)</span> only retains the superscript <span class="math notranslate nohighlight">\(a\)</span>, indicating it now lives in the reference frame <span class="math notranslate nohighlight">\(A\)</span>. This rule is quite useful when implementing these types of transformations in code, as well. Also, keep in mind that we are talking about the <em>same</em> point <span class="math notranslate nohighlight">\(P\)</span> in both cases: it is simply the <em>coordinates</em> that change by expressing them in a different frame.</p>
 <p>Note that this representation generalizes equally to three dimensions,
-but of course <span class="math notranslate nohighlight">\(t\)</span> will be a three-vector, and <span class="math notranslate nohighlight">\(R\)</span> will be a <span class="math notranslate nohighlight">\(3\times3\)</span>
+but of course <span class="math notranslate nohighlight">\(t^a_b\)</span> will be a three-vector, and <span class="math notranslate nohighlight">\(R^a_b\)</span> will be a <span class="math notranslate nohighlight">\(3\times3\)</span>
 rotation matrix representing the 3DOF attitude of the vehicle. The
 latter can be decomposed into roll, pitch, and yaw, if so desired,
 but we will not need that until the next chapter.</p>
@@ -499,21 +511,22 @@ but we will not need that until the next chapter.</p>
 <blockquote>
 <div><p>ICP is a seminal method to align 2 point clouds.</p>
 </div></blockquote>
-<p><strong>Iterative closest points</strong> or <strong>ICP</strong> is a method to align two point clouds, e.g., two successive LIDAR scans. Let us use superscripts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> to distinguish the two point clouds, and the points therein. Under the assumption that we have a good initial estimate <span class="math notranslate nohighlight">\(\hat{T^a_b}\)</span> for the relative pose <span class="math notranslate nohighlight">\(T^a_b\)</span> between the two point clouds, we iterate between two steps:</p>
-<ul class="simple">
+<p><strong>Iterative closest points</strong> or <strong>ICP</strong> is a method to align two point clouds, e.g., two successive LIDAR scans, and it is a crucial component in the PoseSLAM algorithm we will discuss next. Leaning into the notation re-introduced above, we use superscripts <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> to distinguish the two point clouds, and the points therein. Under the assumption that we have a good initial estimate <span class="math notranslate nohighlight">\(\hat{T^a_b}\)</span> for the relative pose <span class="math notranslate nohighlight">\(T^a_b\)</span> between the two point clouds, ICP iterates between two steps:</p>
+<ol class="arabic simple">
 <li><p>find closest point correspondences between the two clouds;</p></li>
 <li><p>re-estimate the relative pose <span class="math notranslate nohighlight">\(\hat{T^a_b}\)</span> between the two clouds.</p></li>
-</ul>
-<p>These two steps are iterated until convergence, hence the name. Below we  explain both steps in order.</p>
+</ol>
+<p>These two steps are iterated until convergence, hence the name <em>iterated</em> closest points. Below we  explain both steps in more detail.</p>
 <section id="finding-closest-points">
 <h3><span class="section-number">6.4.2.1. </span>Finding Closest Points<a class="headerlink" href="#finding-closest-points" title="Permalink to this heading">#</a></h3>
-<p>The first step is the easiest: for each point <span class="math notranslate nohighlight">\(P^a_j\)</span> in the first point cloud, find the closest point <span class="math notranslate nohighlight">\(P^b_j\)</span> in the second point cloud. Stated formally we have:</p>
+<p>The first step is the easiest: for each point <span class="math notranslate nohighlight">\(P^a_j\)</span> in the first point cloud, find the closest point <span class="math notranslate nohighlight">\(P^b_j\)</span> in the second point cloud. Stated formally we need to, for each point <span class="math notranslate nohighlight">\(P^a_j\)</span>, the following minimization problem:</p>
 <div class="math notranslate nohighlight">
 \[
-P^b_j = \arg \min_{P^b} \| P^b - P^a_j\|^2
+P^b_j = \arg \min_{P^b_k} \| P^b_k - P^a_j\|^2
 \]</div>
-<p>where minimizing the square is just as good as minimizing the distance, because they are monotonically related. This is known as the <strong>nearest neighbor</strong> problem, and doing so for all points is the <strong>all nearest neighbors</strong> problem.</p>
-<p>The brute force algorithm of iterating over all points in the second cloud can be quite slow, and indeed finding all nearest neighbors that way has quadratic complexity. However, very fast <em>approximate</em> nearest neighbor algorithms are available. Many of these use specialized data structures, such as “KD-trees” or “Oct-trees” (in 3D). While the details are out of scope, intuitively these data structures  recursively divide up the point clouds into sub-clouds, such that sub-clouds unlikely to contain the nearest neighbor can be quickly excluded. We build this data structure ones for the second cloud, and then use it for all nearest neighbor searches, leading to complexity which is approximately <span class="math notranslate nohighlight">\(O(N \log N\)</span>).</p>
+<p>We prefer using indices <span class="math notranslate nohighlight">\(j\)</span> for points as we use <span class="math notranslate nohighlight">\(i\)</span> for poses below, making it easier to associated notation with geometric concepts. Two things about the above minimization: (a) it is a linear search over all points <span class="math notranslate nohighlight">\(P^b\)</span>, and (b) rather than computing the distance we can save a square root by minimizing the square, which is just as good as they are monotonically related.</p>
+<p>The linear search problem above is known as the <strong>nearest neighbor</strong> problem, and doing so for all points is the <strong>all nearest neighbors</strong> problem.
+Iterating over all points in the second cloud can be quite slow, and indeed finding all nearest neighbors that way has quadratic complexity. However, very fast <em>approximate</em> nearest neighbor algorithms are available. Many of these use specialized data structures, such as “KD-trees” or “Oct-trees” (in 3D). While the details are out of scope, intuitively these data structures  recursively divide up the point clouds into sub-clouds, such that sub-clouds unlikely to contain the nearest neighbor can be quickly excluded. We build this data structure once for the second cloud, and then use it for all nearest neighbor searches, leading to complexity which is approximately <span class="math notranslate nohighlight">\(O(N \log N\)</span>).</p>
 </section>
 <section id="estimating-the-pairwise-transform">
 <h3><span class="section-number">6.4.2.2. </span>Estimating the Pairwise Transform<a class="headerlink" href="#estimating-the-pairwise-transform" title="Permalink to this heading">#</a></h3>
@@ -538,7 +551,7 @@ H = \sum_j P^a_j (P^b_j)^T
 \[
 \widehat{R^a_b} = U V^T
 \]</div>
-<p>Interesting aside: this problem is known as the <em>orthogonal Procrustes problem</em> and its solution via SVD has been known since 1966, from a paper by Peter Schönemann in a <em>psychology</em> journal.</p>
+<p>Interesting aside: this problem is known as the <em>orthogonal Procrustes problem</em> and its solution via SVD has been known since 1966, from <a class="reference external" href="https://doi.org/10.1007%2FBF02289451">a paper by Peter Schönemann</a>. Even more interesting is that Procrustes was a mythological greek villain who either stretched or cut his victims to size to fit their bed, analogous to how we make the rotation matrix above fit the data.</p>
 <p>The above solves the problem when there is only rotation, but it turns out that the best possible translation estimate will always align both <em>centroids</em> of the point clouds. Hence, when there is translation present, we simply compute the matrix <span class="math notranslate nohighlight">\(H\)</span> from the <em>centered</em> points,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -562,29 +575,30 @@ C^a = \widehat{R^a_b} C^b + \widehat{t^a_b},
 <blockquote>
 <div><p>PoseSLAM is SLAM with pose priors and relative pose constraints only. We can derive those from Iterative Closest Points (ICP).</p>
 </div></blockquote>
-<p><strong>SLAM</strong> is <strong>Simultaneous Localization and Mapping</strong>.
-In the SLAM problem the goal is to localize a robot using the information coming
-from the robot’s sensors.
-We have already covered the localization problem in chapter 5,
+<p>As we discussed at the beginning of this section, in SLAM the goal is to localize a robot using the information coming
+from the robot’s sensors, while simultaneously building the map.
+We have already covered the localization problem in chapter 4,
 using both Markov localization and Monte Carlo localization.
 The additional wrinkle in SLAM is that we do
 <em>not</em> know the map a priori, and hence we have to infer the unknown map
 simultaneously with the robot’s location with respect to the evolving map.</p>
-<p><strong>PoseSLAM</strong> is a variant of SLAM that uses pose constraints as the
+<p><strong>PoseSLAM</strong> is a variant of SLAM that uses pose constraints -using an algorithm such as ICP- as the
 basic building block, and where we optimize over the unknown vehicles
-poses. We do not explicitly optimize over a map: that is reconstructed
-after the fact.</p>
-<p>The PoseSLAM problem is:</p>
+poses. In PoseSLAM do <em>not</em> explicitly optimize over a map: instead it is reconstructed
+after the fact. This can only work if (a) the sensor is sufficiently rich to make the pose constraints very accurate,
+and (b) we can build a sufficiently good map from it. LIDAR satisfies both these assumptions,
+making LIDAR-based PoseSLAM a very popular technique.</p>
+<p>In a nutshell, the PoseSLAM problem can be stated as:</p>
 <blockquote>
 <div><p>given a set of noisy relative measurements or <strong>pose constraints</strong>
 <span class="math notranslate nohighlight">\(\tilde{T}_{ij}\)</span>, recover the optimal set of poses <span class="math notranslate nohighlight">\(T_{i}^{*}\)</span> that
 maximizes the posteriori probability, i.e., recover the MAP solution.</p>
 </div></blockquote>
 <p>In the case of mapping for autonomous driving, these relative
-measurements can be derived from performing ICP between overlapping
-scans. We can use GPS and/or IMU measurements to decide which scans
-overlap, so that we do not have to compare <span class="math notranslate nohighlight">\(O(n^{2})\)</span> scans. Depending
-on the situation, we can optimize for 3D or 2D poses, in the way we will
+measurements can be derived by performing ICP between overlapping
+LIDAR scans. If available, we can additionally use GPS and/or IMU measurements
+to decide which scans overlap, so that we do not have to compare <span class="math notranslate nohighlight">\(O(n^{2})\)</span> scans.
+Depending on the situation, we can optimize for 3D or 2D poses, in the way we will
 discus below. Afterwards, we can reconstruct a detailed map by
 transforming the local LIDAR scans into the world frame, using the
 optimized poses <span class="math notranslate nohighlight">\(T_{i}^{*}\)</span>.</p>
@@ -605,8 +619,8 @@ posterior distribution over the unknown pose variables
 <p>where <span class="math notranslate nohighlight">\(\mathcal{T}_{i}\)</span> is the set of poses involved with factor <span class="math notranslate nohighlight">\(\phi_i\)</span>.
 In this way, the factor graph encodes which factors are connected to which variables,
 exposing the sparsity pattern of the corresponding estimation problem.</p>
-<figure>
-<img src="https://github.com/gtbook/robotics/blob/main/Figures6/PoseSLAM-FG.png?raw=1" id="fig:PoseSLAMFG" style="width:60.0%" /><figcaption><span id="fig:PoseSLAMFG" label="fig:PoseSLAMFG">[fig:PoseSLAMFG]</span> PoseSLAM factor graph example.</figcaption>
+<figure id="fig:PoseSLAMFG">
+<img src="https://github.com/gtbook/robotics/blob/main/Figures6/PoseSLAM-FG.png?raw=1" style="width:60.0%" /><figcaption>PoseSLAM factor graph example.</figcaption>
 </figure>
 <p>An example is shown in Figure
 <a href="#fig:PoseSLAMFG" data-reference-type="ref" data-reference="fig:PoseSLAMFG">1</a>.
@@ -641,7 +655,7 @@ Recall that a multivariate Gaussian density <strong>with mean</strong> <span cla
 given by</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{N} x\mu\sigma^2=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left\{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right\} .
+\mathcal{N} (x; \mu, \sigma^2) =\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left\{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right\} .
 \]</div>
 <p>A simple 1D example can help explain this more clearly.
 In particular, if we focus our attention in PoseSLAM on <em>just the x coordinates</em>, then we
@@ -887,7 +901,7 @@ Value 5: (gtsam::Pose2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d1c6b2e2fa3fd9f18b2f18fecb8fb56beb7896d16dabc1d74a88dfb5809f451d.svg" src="_images/d1c6b2e2fa3fd9f18b2f18fecb8fb56beb7896d16dabc1d74a88dfb5809f451d.svg" /></div>
+<img alt="_images/b0b80718551cbfc367849d2572ef1f5960ac3f04905ce3e16a130996fade0f6f.svg" src="_images/b0b80718551cbfc367849d2572ef1f5960ac3f04905ce3e16a130996fade0f6f.svg" /></div>
 </div>
 <p>Optimization is done using non-linear minimization, as explained above. In GTSAM, this is done via a <code class="docutils literal notranslate"><span class="pre">NonlinearOptimizer</span></code> class. The specific optimizer we use below is <code class="docutils literal notranslate"><span class="pre">GaussNewtonOptimizer</span></code>, which exactly implements the pseudo-code given above, but exploiting sparsity in the factor graph to do this very efficiently. The optimizer only needs a graph and an initial estimate, both of which we already created, and hence the code below is quite simple:</p>
 <div class="cell docutils container">
@@ -933,45 +947,7 @@ Value 5: (gtsam::Pose2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">marginals</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Marginals</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">gtsam_plot</span><span class="o">.</span><span class="n">plot_pose2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">atPose2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                           <span class="n">marginals</span><span class="o">.</span><span class="n">marginalCovariance</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/envs/gtbook/lib/python3.9/site-packages/gtsam/utils/plot.py:279,</span> in <span class="ni">plot_pose2</span><span class="nt">(fignum, pose, axis_length, covariance, axis_labels)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">fignum</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">279</span> <span class="n">plot_pose2_on_axes</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>                    <span class="n">pose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>                    <span class="n">axis_length</span><span class="o">=</span><span class="n">axis_length</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>                    <span class="n">covariance</span><span class="o">=</span><span class="n">covariance</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">axis_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">axis_labels</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nn">File /usr/share/miniconda/envs/gtbook/lib/python3.9/site-packages/gtsam/utils/plot.py:252,</span> in <span class="ni">plot_pose2_on_axes</span><span class="nt">(axes, pose, axis_length, covariance)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="n">pPp</span> <span class="o">=</span> <span class="n">covariance</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="n">gPp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">gRp</span><span class="p">,</span> <span class="n">pPp</span><span class="p">),</span> <span class="n">gRp</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">252</span> <span class="n">plot_covariance_ellipse_2d</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">gPp</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/gtbook/lib/python3.9/site-packages/gtsam/utils/plot.py:155,</span> in <span class="ni">plot_covariance_ellipse_2d</span><span class="nt">(axes, origin, covariance)</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="c1"># We multiply k by 2 since k corresponds to the radius but Ellipse uses</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="c1"># the diameter.</span>
-<span class="ne">--&gt; </span><span class="mi">155</span> <span class="n">e1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>                      <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span>                      <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>                      <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span>                      <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">axes</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: __init__() takes 4 positional arguments but 5 were given
-</pre></div>
-</div>
-<img alt="_images/b36f986c4b8dbbe6335faa6edebc373eae52660c3a6f1c759e39b39f252e5da6.png" src="_images/b36f986c4b8dbbe6335faa6edebc373eae52660c3a6f1c759e39b39f252e5da6.png" />
+<img alt="_images/927fd6e77cae6f06b71e6b167e26e45ebccee79aa500280673c588b466e27df8.png" src="_images/927fd6e77cae6f06b71e6b167e26e45ebccee79aa500280673c588b466e27df8.png" />
 </div>
 </div>
 <p>The result is shown graphically in Figure
@@ -1037,7 +1013,7 @@ the graph to a global coordinate frame.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/73c6a101fc057ecee9cc7b0d57631fdc0ece0905bc30f74926fe893f0c73db8f.svg" src="_images/73c6a101fc057ecee9cc7b0d57631fdc0ece0905bc30f74926fe893f0c73db8f.svg" /></div>
+<img alt="_images/03fcbef33a6327a7ecb122135ec1c5a2ddeed9072c81b2ab964f286edc5d9778.svg" src="_images/03fcbef33a6327a7ecb122135ec1c5a2ddeed9072c81b2ab964f286edc5d9778.svg" /></div>
 </div>
 <p>We optimize again with LM, and show the marginals on both robot position and landmarrs, as before:</p>
 <div class="cell docutils container">
@@ -1060,7 +1036,7 @@ the graph to a global coordinate frame.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9fa11ec92c0e85e8b4eedd9afe2b1c7748e6705f54554513e87ee495827f5764.png" src="_images/9fa11ec92c0e85e8b4eedd9afe2b1c7748e6705f54554513e87ee495827f5764.png" />
+<img alt="_images/29d5500ea3bfdea9f599028384210d93cdc87d884842fcca6084c841d8ac8350.png" src="_images/29d5500ea3bfdea9f599028384210d93cdc87d884842fcca6084c841d8ac8350.png" />
 </div>
 </div>
 </section>
@@ -1077,7 +1053,7 @@ the graph to a global coordinate frame.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d2cf33cfa162f499a774cd04c27aa628d50c309af2ec503e93395e02622f4609.svg" src="_images/d2cf33cfa162f499a774cd04c27aa628d50c309af2ec503e93395e02622f4609.svg" /></div>
+<img alt="_images/562af357eefebc9f7e5744b0a2c539ef0d45ac0cb2729f894299a1209b147a5a.svg" src="_images/562af357eefebc9f7e5744b0a2c539ef0d45ac0cb2729f894299a1209b147a5a.svg" /></div>
 </div>
 <p>This is a much larger factor graph than any we have encountered before, and we can distinguish several features:</p>
 <ul class="simple">
@@ -1110,7 +1086,7 @@ the graph to a global coordinate frame.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/898d0ac4270c761186928981b22578f9bfc9a44cb398a12d0bacbd497d81bd7c.png" src="_images/898d0ac4270c761186928981b22578f9bfc9a44cb398a12d0bacbd497d81bd7c.png" />
+<img alt="_images/b0594318361b6b17bccfc8220413d4da2cdd96f3c92b590d0bbe2f16fc834782.png" src="_images/b0594318361b6b17bccfc8220413d4da2cdd96f3c92b590d0bbe2f16fc834782.png" />
 </div>
 </div>
 </section>
@@ -1316,8 +1292,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
