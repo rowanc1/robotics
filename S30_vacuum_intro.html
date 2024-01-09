@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -128,12 +128,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -148,6 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -392,6 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -401,6 +411,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -432,7 +443,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/gtbook/robotics/blob/main/S30_vacuum_intro.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="a-robot-vacuum-cleaner">
@@ -453,10 +464,10 @@ bin, regardless of the category of the object, and with 100% reliability).
 Third, because the effects of actions depend on state, achieving goals in the future will depend
 on the actions the robot executes now (since current actions affect future states).
 Therefore, this robot must consider how the world state evolves with the passing of time.</p>
-<p>In this chapter, we will learn about probabilistic outcomes of actions, which we can model with conditional probability distributions, just like we did with the measurements in the previous chapter.
+<p>In this chapter, we will learn about probabilistic outcomes of actions, which we can model with conditional probability distributions, just like we did with sensor measurements in the previous chapter.
 We will learn how to propagate uncertainty forward in time for specific sequences of actions,
 and how to generate sample trajectories from the corresponding probability distributions.
-For our vacuum robot, states correspond to rooms in the house and trajectories
+For our vacuum cleaning robot, states correspond to rooms in the house, and trajectories
 correspond to the robot moving from room to room.</p>
 <p>Sensing will be quite limited in this chapter.
 We will use a simple (discrete) light sensor.
@@ -466,18 +477,19 @@ problem.
 While our trash sorting robot relied on simple MLE or MAP estimation using the current sensor reading,
 our vacuum cleaning robot will combine knowledge about the history of its actions (which have uncertain
 effects) with the sequence of sensor measurements.
-We will solve this perception problem using <strong>Hidden Markov Models (HMM’s)</strong>.
-An HMM is a probabilistic model for sensing over time.
-While they initially gained popularity in the field of speech recognition,
-we will use them to find the most probable sequence of states given a set of measurements and actions.</p>
+We will solve this perception problem using <strong>Hidden Markov Models (HMMs)</strong>,
+which define probabilistic models for sensing over time.
+While HMMs initially gained popularity in the field of speech recognition,
+we will use them to find the most probable sequence of states given a sequence of sensor measurements and actions.</p>
 <p>Planning is also more interesting for our vacuum cleaning robot.
 Instead of choosing a single action to minimize a cost for the current action,
-we must reason about sequences of actions that occur over time.
+we will reason about sequences of actions that occur over time.
 To do this, we will introduce <strong>Markov Decision Processes (MDPs)</strong>.
 An MDP adds the notion of <em>reward</em>, which will allow us to reason about optimal actions.
 We will even be able to deduce an optimal <em>policy</em>, i.e., a recipe for what to do in each state
 to maximize the aggregate reward over time.</p>
-<p>Finally, we will introduce the notion of reinforcement learning, where we will estimate the parameters of an MDP data during the robot’s normal operation.</p>
+<p>Finally, we will introduce the notion of reinforcement learning, where we will estimate the parameters of an MDP
+using data that is obtained during the robot’s normal operation.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -510,7 +522,7 @@ to maximize the aggregate reward over time.</p>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="S26_sorter_learning.html"
@@ -537,6 +549,8 @@ to maximize the aggregate reward over time.</p>
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -553,6 +567,7 @@ By Frank Dellaert and Seth Hutchinson
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -579,8 +594,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>

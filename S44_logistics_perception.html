@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -130,12 +130,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -150,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -394,6 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -403,6 +413,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -434,33 +445,34 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-localization">4.4.1. Markov Localization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bayes-filter">4.4.1.1. The Bayes Filter</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-historically-meaningful-1d-example">4.4.1.2. A (historically meaningful) 1D Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warehouse-example">4.4.1.3. Warehouse Example</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.4.1.3.1. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-running-example">4.4.1. A Running Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bayes-filter">4.4.2. The Bayes Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-localization">4.4.3. Markov Localization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1d-example">4.4.3.1. A 1D Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warehouse-example">4.4.3.2. Warehouse Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.4.3.2.1. Exercises</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-localization">4.4.2. Monte Carlo Localization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prediction-step">4.4.2.1. The Prediction Step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-likelihood">4.4.2.2. Evaluating the Likelihood</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcl-warehouse-example">4.4.2.3. MCL Warehouse Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-range-sensing">4.4.2.4. Adding Range Sensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-localization">4.4.4. Monte Carlo Localization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prediction-step">4.4.4.1. The Prediction Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-likelihood-in-the-update-step">4.4.4.2. Evaluating the Likelihood in the Update Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcl-warehouse-example">4.4.4.3. MCL Warehouse Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-range-sensing">4.4.4.4. Adding Range Sensing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-smoothing-and-filtering">4.4.3. Kalman Smoothing and Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-and-least-squares">4.4.3.1. Factor Graphs and Least Squares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-example">4.4.3.2. Numerical Example</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">4.4.3.2.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-smoothing-and-filtering">4.4.5. Kalman Smoothing and Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-and-least-squares">4.4.5.1. Factor Graphs and Least Squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-example">4.4.5.2. Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">4.4.5.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-least-squares">4.4.3.3. Sparse Least-Squares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-gps-like-measurements">4.4.3.4. Example with GPS-Like Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-least-squares">4.4.5.3. Sparse Least-Squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-gps-like-measurements">4.4.5.4. Example with GPS-Like Measurements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gtsam-102">4.4.4. GTSAM 102</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gtsam-102">4.4.6. GTSAM 102</a></li>
 </ul>
             </nav>
         </div>
@@ -470,15 +482,45 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/gtbook/robotics/blob/main/S44_logistics_perception.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="localization">
 <h1><span class="section-number">4.4. </span>Localization<a class="headerlink" href="#localization" title="Permalink to this heading">#</a></h1>
 <blockquote>
-<div><p>We introduce three variations of Bayes filtering: Kalman filters, Markov localization, and Monte Carlo localization.</p>
+<div><p>We introduce three variations of Bayes filtering to solve the robot localization problem: Markov localization, and Monte Carlo localization, and Kalman filtering.</p>
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/S44-Warehouse_robots-08.jpg"><img alt="Splash image with yellowish warehouse robot pondering" class="align-center" src="_images/S44-Warehouse_robots-08.jpg" style="width: 40%;" /></a>
+<p><strong>Localization</strong> is the process of estimating the robot’s position using sensor data
+and the history of executed actions.
+In this chapter, the robot’s position at time <span class="math notranslate nohighlight">\(k\)</span> is denoted by <span class="math notranslate nohighlight">\(x_k\)</span>, so the localization problem
+is to estimate <span class="math notranslate nohighlight">\(x_k\)</span> at each time instant using the robot’s history of sensor observations,
+<span class="math notranslate nohighlight">\(z_1, \dots z_k\)</span>, and commanded actions <span class="math notranslate nohighlight">\(u_1, \dots , u_{k-1}\)</span>.</p>
+<p>As we have seen in Chapter 3, when we are able to exploit the Markov property, we need
+not consider the entire sensor and action history at each time <span class="math notranslate nohighlight">\(k\)</span>; intstead, we can iteratively
+compute a probability distribution for the state <span class="math notranslate nohighlight">\(x_k\)</span> using only our belief about the state <span class="math notranslate nohighlight">\(x_{k-1}\)</span>,
+the action <span class="math notranslate nohighlight">\(u_{k-1}\)</span>, and the sensor observation <span class="math notranslate nohighlight">\(z_k\)</span>.
+This kind of iterative, online updating is referred to as filtering.
+The input to the filter is the belief at time <span class="math notranslate nohighlight">\(k-1\)</span>, the action <span class="math notranslate nohighlight">\(u_{k-1}\)</span>, and the observation <span class="math notranslate nohighlight">\(z_k\)</span>.
+The output of the filter is the new belief, a probability distribution for <span class="math notranslate nohighlight">\(x_k\)</span>.
+Note that when taking this approach we abandon computing the full joint distribution
+<span class="math notranslate nohighlight">\(P(X_1, \dots X_k)\)</span>, and content ourselves to compute only the conditional distribution
+for <span class="math notranslate nohighlight">\(X_k\)</span> at time <span class="math notranslate nohighlight">\(k\)</span>.
+In this chapter, the filters that we develop will be derived from Bayes theorem,
+and the result is known as <strong>Bayes filtering</strong>.</p>
+<p>We begin the section with a general introduction to Bayes filters, and then develop
+three specific algorithms, Markov localization, and Monte Carlo localization, and Kalman filtering.
+These three algorithms reflect trade-offs in computational complexity versus accuracy and expressive
+power. In particular, Markov localization relies on a grid-based representation that
+can require significant computer memory as well as significant computation in the update
+process.
+Monte Carlo localization addresses each of these concerns by using a sampling-based approach,
+at the expense of accuracy.
+Kalman filters, on the other hand, provide an exact and optimal solution to the localization
+problem, by only in the special case when the robot can be described as a linear system
+and all uncertainties in motion and observation are Gaussian in nature.</p>
+<section id="a-running-example">
+<h2><span class="section-number">4.4.1. </span>A Running Example<a class="headerlink" href="#a-running-example" title="Permalink to this heading">#</a></h2>
 <p>When introducing concepts related to localization, it will be useful to
 have a short, ground truth trajectory for the robot that we can use to assess the quality of
 solutions.
@@ -535,39 +577,34 @@ moves to the right, then up between the middle two shelves:</p>
 <img alt="_images/864b78ebf9223fa21c73ef5c41244b3e0d7b41999172546bb8642789b8dabf0b.png" src="_images/864b78ebf9223fa21c73ef5c41244b3e0d7b41999172546bb8642789b8dabf0b.png" />
 </div>
 </div>
-<section id="markov-localization">
-<h2><span class="section-number">4.4.1. </span>Markov Localization<a class="headerlink" href="#markov-localization" title="Permalink to this heading">#</a></h2>
-<blockquote>
-<div><p>Complicated sensors necessitate expressive density representations.</p>
-</div></blockquote>
-<p>Through finite element discretization we can use the sum-product algorithm from the previous chapter, as is. When applied to robot localization, because we are using a discrete Markov chain representation, this approach has been called <strong>Markov Localization</strong>. However, because of the computational expense involved, we will not be able to run the sum-product algorithm over <em>multiple</em> times steps. Instead of asking for the full posterior over an entire sequence, we will have to be content with the posterior on the <em>current state</em> only. This approach is called <em>filtering</em>, and this is where we begin.</p>
+</section>
 <section id="the-bayes-filter">
-<h3><span class="section-number">4.4.1.1. </span>The Bayes Filter<a class="headerlink" href="#the-bayes-filter" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">4.4.2. </span>The Bayes Filter<a class="headerlink" href="#the-bayes-filter" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>The Bayes filter is a recursive, ons-step sum-product algorithm.</p>
+<div><p>The Bayes filter is an iterative, one-step sum-product algorithm.</p>
 </div></blockquote>
-<p>The <strong>Bayes filter</strong> is a simple inference scheme that recursively implements the sum-product algorithm.
-In this case we present the discrete version, which will yield Markov localization.
-However,  the same general scheme underlies the venerable Kalman filter, and Monte Carlo Localization, which is based on a sampling-based density representation (both of these are discussed below).</p>
-<p>We assume a finite element discretization such that a density <span class="math notranslate nohighlight">\(p(x_k)\)</span> over continuous states <span class="math notranslate nohighlight">\(x_k\)</span> is approximated by a discrete probability distribution <span class="math notranslate nohighlight">\(P(X_k)\)</span>. The only difference from the previous chapter, which also discussed discreet state spaces, is that in a finite element discretization the cardinality of the discrete states is typically much larger. Recall from section 4.1 that for our <span class="math notranslate nohighlight">\(100m \times 50m\)</span> warehouse example, even at a relatively course resolution of 1m by 1m cells, our state space had a cardinality of 5000 finite elements. This is exactly what makes reasoning over multiple time steps computationally challenging. Because of this complexity, we have to give up on computing the joint posterior <span class="math notranslate nohighlight">\(P(X_1, X_2, ...X_k)\)</span>.</p>
-<p>Instead, in the Bayes filter we are only interested in estimating the state of the
-robot at the <em>current time</em> (denoted by index <span class="math notranslate nohighlight">\(k\)</span> in our discrete-time representation), given all the measurements up to and including the current time.
-In Bayesian fashion, we attempt to characterize our complete knowledge of the state <span class="math notranslate nohighlight">\(X_k\)</span> by computing its posterior <span class="math notranslate nohighlight">\(P(X_k)\)</span>, which is also called the <strong>filtering distribution</strong>.
-To be very clear, we indicate exactly what information we are
-conditioning on when giving the formulas for the Bayes filter.
-To that
-end, we introduce the notation
+<p>The Bayes filter estimates the state of the robot at the <em>current time</em>
+(denoted by index <span class="math notranslate nohighlight">\(k\)</span> in our discrete-time representation),
+given all the measurements and action history up to and including the current time.
+To simplify notation, we define
 <span class="math notranslate nohighlight">\(\mathcal{Z}^{k}=\{z_{1},z_{2},\ldots z_{k}\}\)</span>, i.e., all measurements
 up to and including stage <span class="math notranslate nohighlight">\(k\)</span>.
 Similarly, we define the controls
 <span class="math notranslate nohighlight">\(\mathcal{U}^{k}=\{u_{1},u_{2},\ldots u_{k-1}\}\)</span>.
-Note there is always one less control variable than there are measurements, and we start off the algorithm with Bayes rule as applied to <span class="math notranslate nohighlight">\(k=1\)</span>:</p>
+Note there is always one less control variable than there are measurements.
+The Bayes filter computes the conditional probability distribution
+<span class="math notranslate nohighlight">\(P(X_k | \mathcal{Z}^{k},\mathcal{U}^{k})\)</span>, which is also called the <strong>filtering distribution</strong>.</p>
+<p>Assuming that we are given a prior distribution for the initial state
+of the robot, <span class="math notranslate nohighlight">\(P(X_1)\)</span>,
+we can initialize the Bayes filter for time <span class="math notranslate nohighlight">\(k=1\)</span> by using
+the sensor observation <span class="math notranslate nohighlight">\(z_1\)</span>. Note that no action has yet been applied.
+Thus, we have</p>
 <div class="math notranslate nohighlight">
 \[
 P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \propto L(X_1;z_1)P(X_1)
 \]</div>
 <p>Given this, recursively assuming that we have a probability distribution
-<span class="math notranslate nohighlight">\(P(x_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1})\)</span> over the previous state <span class="math notranslate nohighlight">\(X_{k-1}\)</span>, we proceed in two
+<span class="math notranslate nohighlight">\(P(X_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1})\)</span> over the previous state <span class="math notranslate nohighlight">\(X_{k-1}\)</span>, we proceed in two
 phases:</p>
 <ol class="arabic">
 <li><p>In the <strong>prediction phase</strong> we calculate a <strong>predictive distribution</strong>
@@ -576,48 +613,65 @@ the previous state <span class="math notranslate nohighlight">\(X_{k-1}\)</span>
 <span class="math notranslate nohighlight">\(x_{k-1}\)</span> for <span class="math notranslate nohighlight">\(X_{k-1}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-    P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})=\sum_{x_{k-1}}P(X_{k}|x_{k-1},u_{k-1})P(x_{t-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}).
+    P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})=\sum_{x_{k-1}}P(X_{k}|x_{k-1},u_{k-1})P(x_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}).
     \]</div>
 </li>
 <li><p>In the <strong>measurement phase</strong> we upgrade this predictive density to the <strong>filtering distribution</strong> <span class="math notranslate nohighlight">\(P(X_{k}|\mathcal{Z}^{k},\mathcal{U}^{k})\)</span>
 via Bayes’ rule, given the measurement <span class="math notranslate nohighlight">\(z_{k}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-    P(X_{k}|\mathcal{Z}^{k},\mathcal{U}^{k}) \propto L(X_{k};z_{k})P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k}).
+    P(X_{k}| z_k, \mathcal{Z}^{k-1},\mathcal{U}^{k}) =
+    P(X_{k}| \mathcal{Z}^{k},\mathcal{U}^{k})
+    \propto L(X_{k};z_{k})P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k}).
     \]</div>
 </li>
 </ol>
 <p>A keen observer will see that step 1 and step 2 above implement one step of the sum-product algorithm, where in this case the previous state <span class="math notranslate nohighlight">\(X_{k-1}\)</span> is eliminated. Step 1 is a sum, and step 2 is a product.</p>
 </section>
-<section id="a-historically-meaningful-1d-example">
-<h3><span class="section-number">4.4.1.2. </span>A (historically meaningful) 1D Example<a class="headerlink" href="#a-historically-meaningful-1d-example" title="Permalink to this heading">#</a></h3>
+<section id="markov-localization">
+<h2><span class="section-number">4.4.3. </span>Markov Localization<a class="headerlink" href="#markov-localization" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Markov localization computes the filtering distribution at each time <span class="math notranslate nohighlight">\(k\)</span> using a discrete grid.</p>
+</div></blockquote>
+<p>In principle, for a robot that translates in the plane, we take <span class="math notranslate nohighlight">\(x_k \in \mathbb{R}^2\)</span>,
+and the belief associated to the state would be represented by a probability <em>density</em> function.
+With <strong>Markov localization</strong> we approximate this continuous representation by using
+a discrete grid to represent the workspace and assigning finite probability to each cell
+in the grid.
+In particular,
+we assume a finite element discretization such that a density <span class="math notranslate nohighlight">\(p(x_k)\)</span> over continuous states <span class="math notranslate nohighlight">\(x_k\)</span> is approximated by a discrete probability distribution <span class="math notranslate nohighlight">\(P(X_k)\)</span>.
+The only difference from the previous chapter, which also discussed discrete state spaces, is that in a finite element discretization the cardinality of the discrete states is typically much larger. Recall from section 4.1 that for our <span class="math notranslate nohighlight">\(100m \times 50m\)</span> warehouse example, even at a relatively course resolution of 1m by 1m cells, our state space had a cardinality of 5000 finite elements.
+This makes reasoning over multiple time steps computationally challenging.</p>
+<p>By using this finite element discretization we can apply the Bayes filter, as is, on the discrete grid.
+When applied to robot localization, because we are using a discrete Markov chain representation, this approach has been called <strong>Markov Localization</strong>.</p>
+<section id="a-1d-example">
+<h3><span class="section-number">4.4.3.1. </span>A 1D Example<a class="headerlink" href="#a-1d-example" title="Permalink to this heading">#</a></h3>
 <p>Figure
 <a href="#fig:Markov-localization" data-reference-type="ref" data-reference="fig:Markov-localization">1</a> below
-illustrates the measurement phase for a simple 1D example.
-The example is historically meaningful as it was created by Sebastian Thrun to explain Markov Localization over 20 years ago, and we reuse it here again.</p>
+illustrates the measurement phase for a simple 1D example.</p>
 <figure id="fig:Markov-localization">
 <img src="https://github.com/gtbook/robotics/blob/main/Figures4/markov-localization.png?raw=1" style="width:14cm" alt="">
 <figcaption>One-dimensional example of the measurement phase in Markov localization, the discrete version of the Bayes filter.</figcaption>
 </figure>
 <p>In this environment there are two doors, and the robot has a door sensor. The
-predictive distribution <span class="math notranslate nohighlight">\(P(S)\)</span> encodes that we believe the robot to be
-near the left door. The likelihood <span class="math notranslate nohighlight">\(L(S;o)\)</span>, where measurement (or observation)
-<span class="math notranslate nohighlight">\(o\)</span> indicates that we
-<em>did</em> perceive a door, models the fact that we are more likely to be
-near a door given <span class="math notranslate nohighlight">\(O=o\)</span>, but also allows for the fact that the door
+predictive distribution <span class="math notranslate nohighlight">\(P(X)\)</span> encodes the belief that the robot is
+near the left door. The likelihood <span class="math notranslate nohighlight">\(L(X;z)\)</span>, where measurement (or observation)
+<span class="math notranslate nohighlight">\(z\)</span> indicates that the robot <em>did</em> perceive a door,
+models the fact that the robot is more likely to be
+near a door given <span class="math notranslate nohighlight">\(Z=z\)</span>, but also allows for the fact that the door
 sensor could misfire at any location. Note that the likelihood is
-un-normalized and there is no need for it to sum up to 1. Finally, the
-posterior <span class="math notranslate nohighlight">\(P(S|o)\)</span> is obtained, via Bayes’ rule, as the product of the
-prediction <span class="math notranslate nohighlight">\(P(S)\)</span> and the likelihood <span class="math notranslate nohighlight">\(L(S;o)\)</span>, and is shown at the
+un-normalized and there is no need for it to sum to 1. Finally, the
+posterior <span class="math notranslate nohighlight">\(P(X|z)\)</span> is obtained, via Bayes’ rule, as the product of the
+prediction <span class="math notranslate nohighlight">\(P(X)\)</span> and the likelihood <span class="math notranslate nohighlight">\(L(X;z)\)</span>, and is shown at the
 bottom as a normalized probability distribution. As you can see, the
-most probable explanation for the robot state is <span class="math notranslate nohighlight">\(S=5\)</span>, but there is a
-second mode at <span class="math notranslate nohighlight">\(S=17\)</span> due to the bimodal nature of the likelihood.
-However, that second mode is less probable because of our prior belief
-over <span class="math notranslate nohighlight">\(S\)</span>.</p>
+most probable explanation for the robot state is <span class="math notranslate nohighlight">\(X=5\)</span>, but there is a
+second mode at <span class="math notranslate nohighlight">\(X=17\)</span> due to the bimodal nature of the likelihood.
+However, that second mode is less probable because of the prior belief
+over <span class="math notranslate nohighlight">\(X\)</span>.</p>
 </section>
 <section id="warehouse-example">
-<h3><span class="section-number">4.4.1.3. </span>Warehouse Example<a class="headerlink" href="#warehouse-example" title="Permalink to this heading">#</a></h3>
-<p>Let us apply Markov localization to the warehouse example, using <em>just</em> the proximity sensor for now. We start by initializing the finite element density representation with a prior, centered around the ground truth location for <span class="math notranslate nohighlight">\(k=1\)</span>, but with a relatively large standard deviation of 5 meters:</p>
+<h3><span class="section-number">4.4.3.2. </span>Warehouse Example<a class="headerlink" href="#warehouse-example" title="Permalink to this heading">#</a></h3>
+<p>Let us apply Markov localization to the warehouse example, using <em>just</em> the proximity sensor for now. We start by initializing the finite element density representation with a Gaussian prior, centered around the ground truth location for <span class="math notranslate nohighlight">\(k=1\)</span>, but with a relatively large standard deviation of 5 meters:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prior_mean</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -637,9 +691,10 @@ Recall the formula:</p>
 \[
 P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})=\sum_{x_{k-1}}P(X_{k}|x_{k-1},u_{k-1})P(x_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}).
 \]</div>
-<p>Hence, for every cell in the predictive density approximation, we need to sum over <em>all</em> cells in the previous image. Not only that, but for every one of these <span class="math notranslate nohighlight">\(5000^2\)</span>, i.e., <em>25 million</em> cell combinations <span class="math notranslate nohighlight">\((X_k,x_{k-1})\)</span> we need to evaluate the Gaussian motion model <span class="math notranslate nohighlight">\(P(X_{k}|x_{k-1},u_{k-1})\)</span>. With python for-loops, this will be rather expensive, so in the code below we build in two speedups:</p>
+<p>Hence, for <em>every cell</em> in the predictive distribution grid, we need to sum over <em>all</em> cells in the previous image. Not only that, but for every one of these <span class="math notranslate nohighlight">\(5000^2\)</span>, i.e., <em>25 million</em> cell combinations <span class="math notranslate nohighlight">\((X_k,x_{k-1})\)</span> we need to evaluate the Gaussian motion model <span class="math notranslate nohighlight">\(P(X_{k}|x_{k-1},u_{k-1})\)</span>. With python for-loops, this will be rather expensive, so in the code below we build in two speed-ups:</p>
 <ol class="arabic simple">
-<li><p>We make the outer loop over the previous image, and threshold on the density;</p></li>
+<li><p>We make the outer loop over the previous image, and threshold on the probability value
+(i.e., if the probability value is less than a threshold, we set the value to zero in the output distribution);</p></li>
 <li><p>We make use of the fact that the <code class="docutils literal notranslate"><span class="pre">logistics.gaussian</span></code> function is vectorized, i.e., we can process an entire row of the predictive image at a time.</p></li>
 </ol>
 <p>The fast code looks like this:</p>
@@ -679,8 +734,8 @@ P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})=\sum_{x_{k-1}}P(X_{k}|x_{k-1},u_{k-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 25.4 s, sys: 18.3 s, total: 43.6 s
-Wall time: 21.8 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 24.7 s, sys: 18.1 s, total: 42.8 s
+Wall time: 21.4 s
 </pre></div>
 </div>
 </div>
@@ -689,7 +744,8 @@ Wall time: 21.8 s
 <img src="https://github.com/gtbook/robotics/blob/main/Figures4/predictive.gif?raw=1" id="fig:predictive" style="width:14cm" alt="">
 <figcaption>Evolution of the predictive density (no measurements).</figcaption>
 </figure>
-<p>The figure above shows the result of purely predictive reasoning using a finite element discretization. As you can see, the density grows without bound, and also goes <em>inside</em> the shelves. Without any measurements, we really do not know any better.</p>
+<p>The figure above shows the result of purely predictive reasoning using a finite element discretization. As you can see, the density grows without bound, and also goes <em>inside</em> the shelves. Without any measurements, if we do not explicitly incorporate knowledge about the world (e.g., a map of obstacles),
+the robot cannot rule out such situations.</p>
 <p>The measurement update step takes the predictive density <span class="math notranslate nohighlight">\(P(X_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})\)</span> and <em>upgrades</em> it to the posterior density:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -714,8 +770,8 @@ P(X_{k}|\mathcal{Z}^{k},\mathcal{U}^{k}) \propto L(X_{k};z_{k})P(X_{k}|\mathcal{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8.8 s, sys: 6.27 s, total: 15.1 s
-Wall time: 7.54 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8.54 s, sys: 6.23 s, total: 14.8 s
+Wall time: 7.39 s
 </pre></div>
 </div>
 </div>
@@ -724,9 +780,10 @@ Wall time: 7.54 s
 <img src="https://github.com/gtbook/robotics/blob/main/Figures4/posterior.gif?raw=1" id="fig:posterior" style="width:14cm" alt="">
 <figcaption>Markov localization in action.</figcaption>
 </figure>
-<p>The figure above shows Markov localization in action! The measurement information has <em>literally</em> squeezed the predictive density to a posterior that fuses predictive information with the knowledge that we cannot be anywhere near the shelves, or the wall. Note that the density is still spreading in the direction that the sensor does <em>not</em> yield information.</p>
+<p>The figure above shows Markov localization in action! The measurement information has <em>literally</em> squeezed the predictive density to a posterior that fuses predictive information with the knowledge
+(from the proximity sensor) that we cannot be anywhere near the shelves, or the wall. Note that the density is still spreading in the direction that the sensor does <em>not</em> yield information.</p>
 <section id="exercises">
-<h4><span class="section-number">4.4.1.3.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.4.3.2.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>In principle our motion model should have told us that we cannot move inside shelves. How would you change the prediction code to make this so?</p></li>
 <li><p>The full Markov localization algorithm takes <em>less</em> time than the code <em>without</em> the measurement update. We do more work yet have faster inference. Why?</p></li>
@@ -735,45 +792,50 @@ Wall time: 7.54 s
 </section>
 </section>
 <section id="monte-carlo-localization">
-<h2><span class="section-number">4.4.2. </span>Monte Carlo Localization<a class="headerlink" href="#monte-carlo-localization" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.4. </span>Monte Carlo Localization<a class="headerlink" href="#monte-carlo-localization" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>Localization with a particle-filter is known as Monte Carlo Localization.</p>
+<div><p>Localization with a particle filter is known as Monte Carlo Localization.</p>
 </div></blockquote>
-<p>Samples are cheaper, faster, and better. The above finite element discretization of space is very costly, and most of the memory and computation is used to compute near-zero probabilities.
+<p>The above finite element discretization of space is very costly, and most of the memory and computation is used to compute near-zero probabilities.
 While there <em>are</em> ways to deal with this, switching to a sampling-based representation gets us more bang for the buck computation-wise. And, as we will see, it also leads to a very simple algorithm.
 The sampling-based implementation of a Bayes filter is known as a <strong>particle filter</strong>.
 Below we discuss it in a 2D context, but it is in fact rather general.
 When used for robot localization, this technique is known as <a class="reference external" href="https://www.ri.cmu.edu/publications/monte-carlo-localization-for-mobile-robots/">“Monte Carlo Localization” or MCL</a>.</p>
-<p>A particle filter approximates the Bayes filter by (1) replacing an explicit probability distribution by a set of samples, and (b) approximating the prediction step in the Bayes filter with a Monte Carlo approximation. We recursively assume that we have access to a sampling based approximation of the filtering density over the previous state <span class="math notranslate nohighlight">\(x_{k-1}\)</span>, as a set of <span class="math notranslate nohighlight">\(S\)</span> <em>weighted</em> samples:</p>
+<p>A particle filter approximates the Bayes filter by (a) replacing an explicit probability distribution by a set of samples, and (b) approximating the prediction step in the Bayes filter with a Monte Carlo approximation. We recursively assume that we have access to a sampling based approximation of the filtering density over the previous state <span class="math notranslate nohighlight">\(x_{k-1}\)</span>, as a set of <span class="math notranslate nohighlight">\(S\)</span> <em>weighted</em> samples:</p>
 <div class="math notranslate nohighlight">
 \[
-p(x_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}) \approx \{x_{k-1}^{(s)}, w_{k-1}^{(s)}\}.
+p(X_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}) \approx \{(x_{k-1}^{(s)}, w_{k-1}^{(s)})\}_{s =1 \dots S}
 \]</div>
-<p>We then implement the process in two phases:</p>
+<p>in which <span class="math notranslate nohighlight">\(x_{k-1}^{(s)}\)</span> is the <span class="math notranslate nohighlight">\(s^{th}\)</span> sample, and <span class="math notranslate nohighlight">\(w_{k-1}^{(s)}\)</span> is its weight.</p>
+<p>We then implement the process in two steps, called the <em>prediction</em> and <em>update</em> steps.:</p>
 <ol class="arabic">
-<li><p>In the prediction phase we approximate the predictive distribution
+<li><p>In the prediction step we approximate the predictive distribution
 <span class="math notranslate nohighlight">\(p(x_{k}|\mathcal{Z}^{k-1},\mathcal{U}^{k})\)</span> by drawing <span class="math notranslate nohighlight">\(S\)</span> <em>unweighted</em> samples from the following <strong>mixture density</strong> of motion model densities:</p>
 <div class="math notranslate nohighlight">
 \[
-    \{ x_k^{(t)} \} \sim \sum_s w_{k-1}^{(s)} P(x_{k}|x_{k-1}^{(s)},u_{k-1})P(x_{t-1}^{(s)}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}).
+    \{ x_k^{(t)} \}_{t = 1 \dots S} \sim \sum_s w_{k-1}^{(s)} P(x_{k}|x_{k-1}^{(s)},u_{k-1})P(x_{k-1}^{(s)}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}).
     \]</div>
 </li>
-<li><p>In the measurement phase we upgrade this predictive density to a weighted sample approximation of the filtering distribution, by weighting each unweighted sample with the likelihood of <span class="math notranslate nohighlight">\(x_k^{(t)}\)</span> given the measurement <span class="math notranslate nohighlight">\(z_{k}\)</span>:</p>
+<li><p>In the update step, the measurement is used to convert this predictive density to a weighted sample approximation of the filtering distribution, by weighting each unweighted sample with the likelihood of <span class="math notranslate nohighlight">\(x_k^{(t)}\)</span> given the measurement <span class="math notranslate nohighlight">\(z_{k}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-    p(x_{k-1}|\mathcal{Z}^{k-1},\mathcal{U}^{k-1}) \approx \{x_k^{(t)}, L(x_k^{(t)};z_{k})\}.
+    p(X_{k}|\mathcal{Z}^{k},\mathcal{U}^{k}) \approx \{(x_k^{(t)}, L(x_k^{(t)};z_{k}))\}_{t = 1 \dots S}.
     \]</div>
 </li>
 </ol>
-<p>We start off the algorithm with a set of <span class="math notranslate nohighlight">\(S\)</span> samples from the prior, weighted by the likelihood on the first <span class="math notranslate nohighlight">\(x_1\)</span> given the first measurement <span class="math notranslate nohighlight">\(z_1\)</span>:</p>
+<p>We initialize the algorithm with a set of <span class="math notranslate nohighlight">\(S\)</span> samples from the prior, weighted by the likelihood on the first <span class="math notranslate nohighlight">\(x_1\)</span> given the first measurement <span class="math notranslate nohighlight">\(z_1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)};z_1)\}~\text{with}~x_1^{(t)}\sim p(x_1)
+P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{(x_1^{(t)}, L(x_1^{(t)};z_1))\}_{t = 1 \dots S}~\text{with}~x_1^{(t)}\sim p(X_1)
 \]</div>
 <p>In the “vanilla” particle filter outlined above, the number of samples stays constant over time, but variants exist that adapt the number of samples to the complexity of the density over time, or even to the available computation. Used in that way, a particle filter can be used as a “just in time” algorithm.</p>
+<p>We will now describe the prediction and update steps in more detail, and illustrate the algorithm using our warehouse scenario.</p>
 <section id="the-prediction-step">
-<h3><span class="section-number">4.4.2.1. </span>The Prediction Step<a class="headerlink" href="#the-prediction-step" title="Permalink to this heading">#</a></h3>
-<p>Again, the prediction phase is the most complex. A mixture density is simply a weighted sum of <em>component densities</em>, in this case a set of motion models. The weights are a probability mass function over the component indices and hence should sum to 1. Sampling from a mixture density proceeds in two steps:</p>
+<h3><span class="section-number">4.4.4.1. </span>The Prediction Step<a class="headerlink" href="#the-prediction-step" title="Permalink to this heading">#</a></h3>
+<p>The prediction phase is the more complex of the two steps.
+To illustrate how it works, we will us a simple example in which we represent
+a Gaussian mixture density by a set of weighted particles.
+A mixture density is simply a weighted sum of <em>component densities</em>, in this case a set of motion models. The weights define a probability mass function over the component indices and hence should sum to 1. Sampling from a mixture density proceeds in two steps:</p>
 <ol class="arabic simple">
 <li><p>Pick a component according to the weight distribution.</p></li>
 <li><p>Sample from the component.</p></li>
@@ -804,10 +866,10 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b9a9e30e680961a369d2a2b3d095e1db269521b6a460c2cf2076f4b6b880f68.png" src="_images/1b9a9e30e680961a369d2a2b3d095e1db269521b6a460c2cf2076f4b6b880f68.png" />
+<img alt="_images/4d235b056ca4dabe58c07378bb7ca041b35ea44b1b8dd98cdde2c4e1bddb161b.png" src="_images/4d235b056ca4dabe58c07378bb7ca041b35ea44b1b8dd98cdde2c4e1bddb161b.png" />
 </div>
 </div>
-<p>As you can see the first component is chosen much more often, which is exactly what we expected.</p>
+<p>As you can see the first component is chosen much more often, which is exactly what we expect.</p>
 <p>Armed with this insight about sampling mixtures, we apply it below to code up the MCL prediction step:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -823,8 +885,8 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </div>
 </section>
-<section id="evaluating-the-likelihood">
-<h3><span class="section-number">4.4.2.2. </span>Evaluating the Likelihood<a class="headerlink" href="#evaluating-the-likelihood" title="Permalink to this heading">#</a></h3>
+<section id="evaluating-the-likelihood-in-the-update-step">
+<h3><span class="section-number">4.4.4.2. </span>Evaluating the Likelihood in the Update Step<a class="headerlink" href="#evaluating-the-likelihood-in-the-update-step" title="Permalink to this heading">#</a></h3>
 <p>As before, we know that the ground truth trajectory stays away from obstacles at all times. However, we only have access to a likelihood <em>image</em>, not a function that evaluates the likelihood for an arbitrary coordinate. The following function calculates the correct cell for looking up the likelihood, and returns 0 likelihood if out of bounds:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -839,7 +901,7 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </section>
 <section id="mcl-warehouse-example">
-<h3><span class="section-number">4.4.2.3. </span>MCL Warehouse Example<a class="headerlink" href="#mcl-warehouse-example" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.4.4.3. </span>MCL Warehouse Example<a class="headerlink" href="#mcl-warehouse-example" title="Permalink to this heading">#</a></h3>
 <p>Now that we know how to do the prediction step and evaluate the likelihood function, we are able to implement the entire Monte Carlo localization method. First, let us obtain 500 samples from the posterior:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -851,11 +913,12 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fdb404f6454fd0334173c49960a245a9f991cd99605f02f989a6cad6493bea95.png" src="_images/fdb404f6454fd0334173c49960a245a9f991cd99605f02f989a6cad6493bea95.png" />
+<img alt="_images/29d040e2f4deae47c7fb3ee59a7d805377d334840b77fd1a7b38c67cee12fe76.png" src="_images/29d040e2f4deae47c7fb3ee59a7d805377d334840b77fd1a7b38c67cee12fe76.png" />
 </div>
 </div>
-<p>Compare this sampling-based representation with the Markov localization representation of the prior above, and note they represent the <em>same</em> density, but using vastly different representations. In fact, they also use vastly different resources: for Markov localization we used 5000 cells, and here we use 500 two-dimensional vectors. In higher-dimensional state spaces this difference is even greater: what would happen if we wanted to represent orientation as well?</p>
-<p>However, as discussed, we start off MCL with a set of <em>weighted</em> samples <span class="math notranslate nohighlight">\(\{x_1^{(t)}, L(x_1^{(t)};z_1)\}\)</span>, which represents the posterior for <span class="math notranslate nohighlight">\(k=1\)</span>. We do this by weighting each sample from the prior with the likelihood:</p>
+<p>Compare this sampling-based representation with the Markov localization representation of the prior above, and note they represent the <em>same</em> density, but using vastly different representations. In fact, they also use vastly different resources: for Markov localization we used 5000 cells, and here we use 500 samples, each represented as a two-dimensional vector. In higher-dimensional state spaces this difference is even greater: what would happen if we wanted to represent orientation as well?</p>
+<p>However, as discussed, we start off MCL with a set of <em>weighted</em> samples
+<span class="math notranslate nohighlight">\(\{(x_1^{(t)}, L(x_1^{(t)};z_1))\}_{t = 1 \dots S}\)</span>, which represents the posterior for <span class="math notranslate nohighlight">\(k=1\)</span>. We do this by weighting each sample from the prior with the likelihood:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">prior_samples</span>
@@ -866,7 +929,7 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/84741fccb6eab4bdeda164947e70d58fdb05a31930097ab4d68417fa8e721319.png" src="_images/84741fccb6eab4bdeda164947e70d58fdb05a31930097ab4d68417fa8e721319.png" />
+<img alt="_images/19de7eb027fbf380fa3f893ae3cb74c0f33a077c6cfe17edf8e996626ec23743.png" src="_images/19de7eb027fbf380fa3f893ae3cb74c0f33a077c6cfe17edf8e996626ec23743.png" />
 </div>
 </div>
 <p>Note that all samples close to the wall and/or the shelves have disappeared, as they have zero weight. All remaining samples have the same weight.</p>
@@ -885,8 +948,8 @@ P(X_1|\mathcal{Z}^1=\{z_1\}, \mathcal{U}^1=\{\}) \approx \{x_1^{(t)}, L(x_1^{(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 445 ms, sys: 365 µs, total: 445 ms
-Wall time: 444 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 438 ms, sys: 2.84 ms, total: 441 ms
+Wall time: 440 ms
 </pre></div>
 </div>
 </div>
@@ -907,10 +970,10 @@ Wall time: 444 ms
 <img alt="_images/d6e7d31794cbc66d47240bd68cc1d13f0d928d23ea4e53bbb6f412f44fb27c42.png" src="_images/d6e7d31794cbc66d47240bd68cc1d13f0d928d23ea4e53bbb6f412f44fb27c42.png" />
 </div>
 </div>
-<p>MCL can be made to be <em>more</em> accurate than Markov localization, as in the limit an infinite number of samples will represent the actual densities exactly. Of course, we can also increase the resolution of the Markov localization representation, but at exponential cost. In contrast, the samples needed are proportional to the “volume” that the density occupies, an observation that underlies adaptive variants.</p>
+<p>MCL can be made to be <em>more</em> accurate than Markov localization, since the accuracy of the sample-based approximation can be increased by increasing the number of samples. Of course, we can also increase the resolution of the Markov localization representation, but at exponential cost. In contrast, the samples needed are proportional to the “volume” that the density occupies, an observation that underlies adaptive variants of the particle filter.</p>
 </section>
 <section id="adding-range-sensing">
-<h3><span class="section-number">4.4.2.4. </span>Adding Range Sensing<a class="headerlink" href="#adding-range-sensing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.4.4.4. </span>Adding Range Sensing<a class="headerlink" href="#adding-range-sensing" title="Permalink to this heading">#</a></h3>
 <p>Finally, and this is will be rather easy in MCL, let us investigate the effect of adding range sensing. This time we won’t have the luxury to know the entire measurement sequence in advance, as we did with proximity. Rather, the likelihood will have to be given the output of the RFID sensor. Remember that was either a beacon ID and a range <span class="math notranslate nohighlight">\((i,r)\)</span>, or <span class="math notranslate nohighlight">\((\text{None},\infty)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -930,7 +993,9 @@ Wall time: 444 ms
 </div>
 </div>
 </div>
-<p>We can also use this to illustrate how to <em>globally</em> localize, without any prior information at all, except that we are <em>somewhere</em> in the warehouse. We can encode this knowledge as samples by uniformly sampling over the entire range for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Because our knowledge is now so diffuse, we use 2000 samples instead of 500 to better approximate it:</p>
+<p>We can also use this to illustrate how to <em>globally</em> localize, without any prior information at all, except that we are <em>somewhere</em> in the warehouse. We can encode this knowledge as samples by uniformly sampling over the entire range for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. This corresponds to assuming that the prior distribution on the initial state is
+a uniform distribution, sometimes called the <em>uniform prior</em> assumption.
+Because our knowledge is now so diffuse, we use 2000 samples instead of 500 to better approximate it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="o">=</span><span class="mi">2000</span>
@@ -941,10 +1006,10 @@ Wall time: 444 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/df036d86fdf6fa1c66bf5fbe64eec0bbe3dbe994fd178513f0d191d8852977c2.png" src="_images/df036d86fdf6fa1c66bf5fbe64eec0bbe3dbe994fd178513f0d191d8852977c2.png" />
+<img alt="_images/47f9504add6a2b50f0ee94325497a51d3b4dcc77f65273c592887a8bd5121c4a.png" src="_images/47f9504add6a2b50f0ee94325497a51d3b4dcc77f65273c592887a8bd5121c4a.png" />
 </div>
 </div>
-<p>The first range measurement happens to be out if range, and we can see the effect on our estimate for the posterior <span class="math notranslate nohighlight">\(p(x_1|z_1)\)</span> quite clearly:</p>
+<p>The first range measurement happens to be out of range, and we can see the effect on our estimate for the posterior <span class="math notranslate nohighlight">\(p(x_1|z_1)\)</span> quite clearly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">prior_samples</span>
@@ -956,10 +1021,10 @@ Wall time: 444 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d08f6f50b05fea45291ae38df0d09e56ad4502535411be7ec7ff536ed3e2fdb9.png" src="_images/d08f6f50b05fea45291ae38df0d09e56ad4502535411be7ec7ff536ed3e2fdb9.png" />
+<img alt="_images/07d98a98975f1edf3fbab2b8be89b099b8d67a885f4bca77edfdd89543e773af.png" src="_images/07d98a98975f1edf3fbab2b8be89b099b8d67a885f4bca77edfdd89543e773af.png" />
 </div>
 </div>
-<p>As expected, the likelihood has “punched holes” around the beacons, because we <em>know</em> we cannot have been near them. This is the power of <em>negative</em> information. When we combine it with the proximity OFF measurement, we narrow our posterior down even more:</p>
+<p>As expected, the likelihood has “punched holes” around the beacons, because we <em>know</em> we cannot have been near them. When we combine this with the proximity OFF measurement, we improve our posterior even more:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">likelihood_off</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
@@ -969,7 +1034,7 @@ Wall time: 444 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83cd6baf0a8e5cf010737d856015679ff5185c1daf0548df753a5b7a98ca9b0b.png" src="_images/83cd6baf0a8e5cf010737d856015679ff5185c1daf0548df753a5b7a98ca9b0b.png" />
+<img alt="_images/c1553c7e28137184642692d8b568ef7bec9ad3b8bd509a8e844923f6a3b52d62.png" src="_images/c1553c7e28137184642692d8b568ef7bec9ad3b8bd509a8e844923f6a3b52d62.png" />
 </div>
 </div>
 <p>We are now ready to bring it all together by multiplying <em>two</em> likelihoods in every measurement update phase:</p>
@@ -991,8 +1056,8 @@ Wall time: 444 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 481 ms, sys: 0 ns, total: 481 ms
-Wall time: 481 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 472 ms, sys: 288 µs, total: 473 ms
+Wall time: 472 ms
 </pre></div>
 </div>
 </div>
@@ -1002,30 +1067,35 @@ Wall time: 481 ms
 <figcaption>Global localization using MCL aided by range sensing.</figcaption>
 </figure>
 <p>The figure above shows global localization in action! At the onset, the robot is very confused as to where it might be in the warehouse, but it still has <em>some</em> knowledge. Then it moves within range of beacon <span class="math notranslate nohighlight">\(0\)</span>, which immediately localizes it, acting a bit like a GPS sensor, especially in combination with what was sensed before. After that the particular shape of the range likelihoods makes for some interesting antics, and at the end we are quite a bit more certain that the robot is in the center aisle.</p>
-<p>This example showed off <em>two</em> really nice properties of Monte Carlo localization (and, for that matter, Markov localization):</p>
+<p>This example showed off <em>two</em> nice properties of Monte Carlo localization (and, for that matter, Markov localization):</p>
 <ol class="arabic simple">
-<li><p>We can reason about multi-model densities and even the complete absence of knowledge.</p></li>
-<li><p>We can incorporate powerful, <em>negative</em> information, such as out of range measurements.</p></li>
+<li><p>We can reason about multi-model densities.</p></li>
+<li><p>We can incorporate missing information/data, such as out of range measurements.</p></li>
 </ol>
-<p>To emphasize the latter point even more, note that for the last few time steps in the animation above we are <em>out</em> of beacon range, and you can see a bit of “squeezing” of the sample cloud at the very top, because of this. Negative information for the win!</p>
+<p>To emphasize the latter point even more, note that for the last few time steps in the animation above we are <em>out</em> of beacon range, and you can see a bit of “squeezing” of the sample cloud at the very top, because of this.</p>
 </section>
 </section>
 <section id="kalman-smoothing-and-filtering">
-<h2><span class="section-number">4.4.3. </span>Kalman Smoothing and Filtering<a class="headerlink" href="#kalman-smoothing-and-filtering" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.5. </span>Kalman Smoothing and Filtering<a class="headerlink" href="#kalman-smoothing-and-filtering" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>Where Gaussians are used, Kalman was there first.</p>
+<div><p>For linear systems with Gaussian uncertainty, the Kalman filter is both efficient and optimal.</p>
 </div></blockquote>
-<p>The final and mathematically most challenging approach we will discuss is Kalman smoothing and filtering. Ironically, while the math is harder, the circumstances in which these methods can be applied are more limited.
-The math is only exact for (a) linear measurement models and (b) Gaussian additive noise.
-In addition, although there are ways to deal with nonlinear models, a more serious limitation is that the density on the state can only ever be Gaussian itself.</p>
-<p>These methods are incredibly important in robotics. In spite of all their limitations, Kalman smoothers and filters are incredibly efficient, and are at the core of the navigation stack of many systems, robots and otherwise. In fact, the Kalman filter was developed in order to perform navigation on board military aircraft in the sixties, and could run on the extremely limited computational hardware - by today’s standards - on board those aircraft.</p>
+<p>The final and mathematically most challenging approach we will discuss is Kalman smoothing and filtering. Ironically, while the math is more difficult, the circumstances in which these methods can be applied are more limited.
+The math is only exact for (a) linear measurement and motion models and (b) Gaussian additive noise.
+In addition, although there are ways to deal with nonlinear models, a more serious limitation is that the density on the state is restricted to Gaussian distributions.</p>
+<p>These methods are incredibly important in robotics. In spite of all their limitations, Kalman smoothers and filters are incredibly efficient, and are at the core of the navigation stack
+(i.e., the software that handles everything from low-level sensor processing to higher-level localization)
+of many systems, robots and otherwise.
+In fact, the Kalman filter was implemented in the sixties on Apollo flight computers,
+which had extremely limited computational hardware.</p>
 <section id="factor-graphs-and-least-squares">
-<h3><span class="section-number">4.4.3.1. </span>Factor Graphs and Least Squares<a class="headerlink" href="#factor-graphs-and-least-squares" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.4.5.1. </span>Factor Graphs and Least Squares<a class="headerlink" href="#factor-graphs-and-least-squares" title="Permalink to this heading">#</a></h3>
 <blockquote>
-<div><p>When given measurements and actions, we create a factor graph directly.</p>
+<div><p>When given measurements and actions, we can create a factor graph directly.</p>
 </div></blockquote>
 <p><strong>Kalman smoothing</strong> is the equivalent of the Viterbi algorithm for hidden Markov model, but for continuous state spaces.</p>
-<p>In the continuous case, we build the factors directly from given controls and measurements. A factor graph now encodes the negative log-posterior</p>
+<p>In the continuous case, we build the factors directly from given control inputs and measurements.
+A factor graph now encodes the negative log-posterior</p>
 <div class="math notranslate nohighlight">
 \[\Phi(X)=\sum_i \phi(X_i) = \frac{1}{2} \sum_i \|A_i X_i-b_i\|^2.\]</div>
 <p>In the continuous case we use <em>minimization</em> of the log-likelihood rather than maximization over the probabilities. The main reason is because then inference becomes a linear least squares problem.</p>
@@ -1075,8 +1145,8 @@ X^* &amp;= (A^T A)^{-1} A^T b
 <p>Solving a linear least-squares problem this way can be expensive. The matrix <span class="math notranslate nohighlight">\(A\)</span> can be very high dimensional, but luckily in many sensor fusion scenarios it is exceedingly <em>sparse</em>. Still, we have to proceed with some care, as in general the matrix <span class="math notranslate nohighlight">\((A^T A)^{-1}\)</span> is <em>not</em> sparse. The matrix <span class="math notranslate nohighlight">\(Q \doteq A^T A\)</span> is known as the <strong>Hessian</strong> or <strong>Information Matrix</strong> and has dimensions <span class="math notranslate nohighlight">\(n\times n\)</span> if there are <span class="math notranslate nohighlight">\(n\)</span> scalar unknowns. In general, it takes <span class="math notranslate nohighlight">\(O(n^3)\)</span> work to compute it, which is only 27 for <span class="math notranslate nohighlight">\(n=3\)</span>, but is already 1 <em>billion</em> for <span class="math notranslate nohighlight">\(n=1000\)</span>.</p>
 </section>
 <section id="numerical-example">
-<h3><span class="section-number">4.4.3.2. </span>Numerical Example<a class="headerlink" href="#numerical-example" title="Permalink to this heading">#</a></h3>
-<p>It is trivial to implement in numpy for the small example above:</p>
+<h3><span class="section-number">4.4.5.2. </span>Numerical Example<a class="headerlink" href="#numerical-example" title="Permalink to this heading">#</a></h3>
+<p>This method is trivial to implement in numpy for the small example above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.</span><span class="p">,</span><span class="mf">5.</span><span class="p">,</span><span class="mf">7.</span><span class="p">])</span>
@@ -1105,12 +1175,12 @@ X^* &amp;= (A^T A)^{-1} A^T b
 </div>
 </div>
 <section id="exercise">
-<h4><span class="section-number">4.4.3.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.4.5.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
 <p>What would make the errors <em>not</em> divide equally between factors?</p>
 </section>
 </section>
 <section id="sparse-least-squares">
-<h3><span class="section-number">4.4.3.3. </span>Sparse Least-Squares<a class="headerlink" href="#sparse-least-squares" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.4.5.3. </span>Sparse Least-Squares<a class="headerlink" href="#sparse-least-squares" title="Permalink to this heading">#</a></h3>
 <p>In practice we use <em>sparse factorization methods</em> to solve for <span class="math notranslate nohighlight">\(X^*\)</span>. In particular, <em>sparse Cholesky</em> factorization can efficiently decompose the sparse Hessian <span class="math notranslate nohighlight">\(Q\)</span> into its matrix square root <span class="math notranslate nohighlight">\(R\)</span></p>
 <div class="math notranslate nohighlight">
 \[A^T A=R^T R\]</div>
@@ -1125,16 +1195,16 @@ R^T y &amp;= A^T b
 <p>In the last line, <span class="math notranslate nohighlight">\(R^T\)</span> is lower-triangular, and hence <span class="math notranslate nohighlight">\(y\)</span> can be easily solved for proceeding from <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_n\)</span>, via <em>forward-substitution</em>. We then turn around use the computed value of <span class="math notranslate nohighlight">\(y\)</span> to solve for <span class="math notranslate nohighlight">\(X^*\)</span> by <em>back-substitution</em>:</p>
 <div class="math notranslate nohighlight">
 \[R X^*=y.\]</div>
-<p>Both these steps are <span class="math notranslate nohighlight">\(O(n^2)\)</span> for dense matrices, but typically closer to <span class="math notranslate nohighlight">\(O(n)\)</span> for sparse matrices.</p>
+<p>Both of these steps are <span class="math notranslate nohighlight">\(O(n^2)\)</span> for dense matrices, but typically closer to <span class="math notranslate nohighlight">\(O(n)\)</span> for sparse matrices.</p>
 <p>There is a deep connection between sparse factorization methods and the sum-product algorithm discussed in the previous chapter. In fact, sparse factorization <em>is</em> sum-product, where one continuous variable is eliminated at a time. The factor graph corresponding to a sparse least-squares problem corresponds to its sparsity pattern. In this graphical framework, the <em>product</em> is implemented by collecting all factors connected to that variable, and the <em>sum</em> is implemented by expressing the variable to be eliminated as a linear combination of its neighbors in the graph.</p>
 </section>
 <section id="example-with-gps-like-measurements">
-<h3><span class="section-number">4.4.3.4. </span>Example with GPS-Like Measurements<a class="headerlink" href="#example-with-gps-like-measurements" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.4.5.4. </span>Example with GPS-Like Measurements<a class="headerlink" href="#example-with-gps-like-measurements" title="Permalink to this heading">#</a></h3>
 <blockquote>
-<div><p>We build a factor graph and then simply call optimize.</p>
+<div><p>We build a factor graph and then simply call <code class="docutils literal notranslate"><span class="pre">optimize</span></code>.</p>
 </div></blockquote>
 <p>GTSAM is built around state-of-the-art sparse factorization methods, and hence can very efficiently solve large sensor fusion problems, like the localization problem with GPS-like measurements.
-Below we illustrate this with an example in code for the GPS-like measurements, which is easily tackled using optimization. Range measurements can also be handled, but <em>out of range</em> measurements are not so easy, so we will defer handling range to the next section.</p>
+Below we illustrate this with an example in code for the GPS-like measurements, which is easily tackled using optimization. Range measurements can also be handled.</p>
 <p>We simulate measurements using the ground truth trajectory but with noise added, by creating a quick Bayes net do this for us. Remember from the previous section that the measurements are in centimeters, so the number <span class="math notranslate nohighlight">\(30\)</span> below is the standard deviation of the measurement noise, in centimeters:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1197,7 +1267,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6960b85937defcca1e0d129622170b80161e6e209c659b85894905a025e281d0.svg" src="_images/6960b85937defcca1e0d129622170b80161e6e209c659b85894905a025e281d0.svg" /></div>
+<img alt="_images/b4fd815ad83f86508ba31ea25701f65a6f0defd353c66f4243e88afa13006cef.svg" src="_images/b4fd815ad83f86508ba31ea25701f65a6f0defd353c66f4243e88afa13006cef.svg" /></div>
 </div>
 <p>Now we can find the optimal solution, using the <code class="docutils literal notranslate"><span class="pre">optimize</span></code> method. In the Gaussian factor graph case, this solves a linear least-squares problem with a continuous variant of the sum-product algorithm:</p>
 <div class="cell docutils container">
@@ -1222,7 +1292,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </section>
 </section>
 <section id="gtsam-102">
-<h2><span class="section-number">4.4.4. </span>GTSAM 102<a class="headerlink" href="#gtsam-102" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.6. </span>GTSAM 102<a class="headerlink" href="#gtsam-102" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>A deeper dive in the GTSAM concepts used above.</p>
 </div></blockquote>
@@ -1234,7 +1304,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6960b85937defcca1e0d129622170b80161e6e209c659b85894905a025e281d0.svg" src="_images/6960b85937defcca1e0d129622170b80161e6e209c659b85894905a025e281d0.svg" /></div>
+<img alt="_images/b4fd815ad83f86508ba31ea25701f65a6f0defd353c66f4243e88afa13006cef.svg" src="_images/b4fd815ad83f86508ba31ea25701f65a6f0defd353c66f4243e88afa13006cef.svg" /></div>
 </div>
 <p>We can also visualize the sparse <span class="math notranslate nohighlight">\(A\)</span> matrix, which is called the <strong>sparse Jacobian</strong> of the system:</p>
 <div class="cell docutils container">
@@ -1251,7 +1321,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </div>
 <p>In fact, the deep connection between factor graphs and sparse linear algebra is this:</p>
 <blockquote>
-<div><p>Columns correspond to variables, and rows correspond to factors</p>
+<div><p>Columns correspond to variables, and rows correspond to factors.</p>
 </div></blockquote>
 <p>You can make out, from the top:</p>
 <ul class="simple">
@@ -1268,7 +1338,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a4e2932d07586e24cbc111be250afa19b20ea515a9e0fd9b86a746c1cb50a53d.svg" src="_images/a4e2932d07586e24cbc111be250afa19b20ea515a9e0fd9b86a746c1cb50a53d.svg" /></div>
+<img alt="_images/48e429b709583341ffa287c176ec2217b3e7e2c5e8495c05994fe672c0ea6c6d.svg" src="_images/48e429b709583341ffa287c176ec2217b3e7e2c5e8495c05994fe672c0ea6c6d.svg" /></div>
 </div>
 <p>This Bayes net <em>is</em> the upper-triangular (DAG!) Cholesky factor <span class="math notranslate nohighlight">\(R\)</span> we discussed above:</p>
 <div class="cell docutils container">
@@ -1284,9 +1354,9 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
 </div>
 <p>Indeed, here the correspondence is:</p>
 <blockquote>
-<div><p>columns correspond to variables, and rows correspond to Gaussian conditionals.</p>
+<div><p>Columns correspond to variables, and rows correspond to Gaussian conditionals.</p>
 </div></blockquote>
-<p>In general, the correspondence is about <em>block</em> columns, as vraiables in this case are two-dimensional, and <em>block</em> rows. For example, the first <code class="docutils literal notranslate"><span class="pre">GaussianConditional</span></code> in the <code class="docutils literal notranslate"><span class="pre">gaussian_posterior</span></code> Bayes net corresponds to the first two rows above, and can be shown like so:</p>
+<p>In general, the correspondence is about <em>block</em> columns, as variables in this case are two-dimensional, and <em>block</em> rows. For example, the first <code class="docutils literal notranslate"><span class="pre">GaussianConditional</span></code> in the <code class="docutils literal notranslate"><span class="pre">gaussian_posterior</span></code> Bayes net corresponds to the first two rows above, and can be shown like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gaussian_posterior</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;First two rows are: &quot;</span><span class="p">)</span>
@@ -1342,7 +1412,7 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="S43_logistics_sensing.html"
@@ -1371,39 +1441,41 @@ Below we illustrate this with an example in code for the GPS-like measurements, 
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-localization">4.4.1. Markov Localization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bayes-filter">4.4.1.1. The Bayes Filter</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-historically-meaningful-1d-example">4.4.1.2. A (historically meaningful) 1D Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warehouse-example">4.4.1.3. Warehouse Example</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.4.1.3.1. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-running-example">4.4.1. A Running Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bayes-filter">4.4.2. The Bayes Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-localization">4.4.3. Markov Localization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1d-example">4.4.3.1. A 1D Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warehouse-example">4.4.3.2. Warehouse Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.4.3.2.1. Exercises</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-localization">4.4.2. Monte Carlo Localization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prediction-step">4.4.2.1. The Prediction Step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-likelihood">4.4.2.2. Evaluating the Likelihood</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcl-warehouse-example">4.4.2.3. MCL Warehouse Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-range-sensing">4.4.2.4. Adding Range Sensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-localization">4.4.4. Monte Carlo Localization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prediction-step">4.4.4.1. The Prediction Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-likelihood-in-the-update-step">4.4.4.2. Evaluating the Likelihood in the Update Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcl-warehouse-example">4.4.4.3. MCL Warehouse Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-range-sensing">4.4.4.4. Adding Range Sensing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-smoothing-and-filtering">4.4.3. Kalman Smoothing and Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-and-least-squares">4.4.3.1. Factor Graphs and Least Squares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-example">4.4.3.2. Numerical Example</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">4.4.3.2.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-smoothing-and-filtering">4.4.5. Kalman Smoothing and Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-and-least-squares">4.4.5.1. Factor Graphs and Least Squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-example">4.4.5.2. Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">4.4.5.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-least-squares">4.4.3.3. Sparse Least-Squares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-gps-like-measurements">4.4.3.4. Example with GPS-Like Measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-least-squares">4.4.5.3. Sparse Least-Squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-gps-like-measurements">4.4.5.4. Example with GPS-Like Measurements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gtsam-102">4.4.4. GTSAM 102</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gtsam-102">4.4.6. GTSAM 102</a></li>
 </ul>
   </nav></div>
 
@@ -1425,6 +1497,7 @@ By Frank Dellaert and Seth Hutchinson
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1451,8 +1524,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>
