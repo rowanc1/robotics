@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -71,6 +71,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'S70_drone_intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -88,7 +90,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -128,20 +129,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -453,17 +449,28 @@ document.write(`
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/S70-Autonomous_camera_drone-06.jpg"><img alt="Splash image with ominous looking steampunk drone" class="align-center" src="_images/S70-Autonomous_camera_drone-06.jpg" style="width: 60%;" /></a>
 <p><strong>Unmanned Aerial Vehicles</strong> (UAVs) take autonomy into the next dimension: into three dimensions, to be exact. Whereas autonomous vehicles are bound to earth, UAVs take to the air. Hence, their perception and planning problems are fundamentally harder in a geometric sense. On the other hand, our airspace is currently much sparser than our roads are, and thus dynamic obstacle avoidance is less of an issue.</p>
-<p>In this chapter we will concentrate on a very popular class of UAVs: quadrotors. These are craft equipped with four actuated rotors that allow for very simple control algorithms, yet achieving very agile flight. Because the quadrotor design is very cheap to manufacture and there is a large market for camera drones, most quadrotor vehicles have a rather small form factor and are designed to be easily portable. Sometimes this segment of the UAV market is designated as <strong>Micro Aerial Vehicles</strong> or MAVs, a term we will use throughout this chapter.</p>
-<p>After an initial discussion on how to represent the state of a quadrotor, we discuss how exactly to model flight and actions to control flight. For sensing we introduce a new sensor: the inertial measurement unit. We wil use that sensor and again use cameras, but now focused on <strong>3D reconstruction</strong> of the scene from a moving camera. This will require us to introduce some more mathematical tools, but almost the same tools can be used in order to <em>plan</em> in 3D, via <strong>trajectory optimization</strong>. Finally, in the learning section we focus on a hot new deep-learning-based 3D reconstruction technique: Neural Radiance Fields.</p>
-<p>In summary, in this chapter we will cover the following topics:</p>
-<ul class="simple">
-<li><p>7.1 State:		SO(3) and SE(3)</p></li>
-<li><p>7.2 Actuators: 	Equations of quad-rotor flight</p></li>
-<li><p>7.3 Sensors: 	    Camera in 3D, geometry, stereo</p></li>
-<li><p>7.4 Perception: 	Visual SLAM</p></li>
-<li><p>7.5 Planning: 	Trajectory Optimization</p></li>
-<li><p>7.6 Learning:     Neural Radiance Fields (NeRF)</p></li>
-</ul>
+<p>In this chapter we will concentrate on a very popular class of UAVs: quadrotors. These are craft equipped with four actuated rotors that allow for very simple control algorithms, yet can achieve very agile flight. Because quadrotors are cheap to manufacture and there is a large market for camera drones, most quadrotor vehicles have a rather small form factor and are designed to be easily portable. Sometimes this segment of the UAV market is designated as <strong>Micro Aerial Vehicles</strong> or MAVs, a term we will use throughout this chapter.</p>
+<p>In previous chapters, we have used <span class="math notranslate nohighlight">\(SE(2)\)</span> to represent pose in the plane.
+In this chapter, we will extend this idea, introducing <span class="math notranslate nohighlight">\(SE(3)\)</span>, which can be used to represent
+pose in 3D. While the transition from 2D to 3D can seem confusing, the mathematics required for this
+extension are actually quite straightforward.</p>
+<p>Equipped with <span class="math notranslate nohighlight">\(SE(3)\)</span> to represent pose, we next discuss the mathematics of quadrotor flight, paying
+particular attention to the different 3D coordinate frames that are involved.
+We will develop a set of equations that describe the motion of the quadrotor,
+including the effects of forces and torques generated by the individual rotors.
+Luckily, the aerodynamics of quadrotor flight are simple enough that we can accomplish our goals
+using mere Newtonian mechanics.</p>
+<p>For sensing, we introduce a new sensor: the inertial measurement unit (IMU).
+Typical IMUs may incorporate gyroscopes, accelerometers, and even magnetometers,
+and are thus able to provide information about the quadrotors linear and angular velocities,
+as well as absolute orientation with respect to the Earth’s magnetic poles.
+In addition to IMUs, we will again use cameras.
+In this case
+we focus on <strong>3D reconstruction</strong> of the scene from a moving camera. This will require us to introduce some more mathematical tools, but happily, these tools will also be useful for <em>planning</em>!
+In this chapter, we will formulate the motion planning problems as a
+<strong>trajectory optimization</strong> problem, and consider various objectives that we might like to optimize
+for pleasing flight performance.</p>
+<p>We conclude the chapter by introducing a new deep-learning-based 3D reconstruction technique: Neural Radiance Fields.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -568,8 +575,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -71,6 +71,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'S75_drone_planning';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -87,7 +89,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -127,20 +128,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -419,7 +415,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -435,6 +433,35 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-for-position">7.5.1. Optimizing for Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#occupancy-and-cost-maps">7.5.2. Occupancy and Cost Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-costs-truly-differentiable">7.5.3. Making Costs (Truly) Differentiable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-for-trajectory-optimization">7.5.4. Factor Graphs for Trajectory Optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.5.4.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">7.5.5. Smoothing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-virtual-vectored-thrust">7.5.6. A Virtual Vectored Thrust</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-open-loop-and-feedback-control">7.5.7. Combining Open Loop and Feedback Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.5.7.1. Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectoring-using-fast-rotational-dynamics">7.5.8. Vectoring using Fast Rotational Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-motor-thrust-vectors">7.5.8.1. Calculating Motor Thrust Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-example">7.5.9. Code Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.5.9.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-and-controlling-yaw">7.5.10. Planning and Controlling Yaw</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -444,16 +471,855 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/gtbook/robotics/blob/main/S75_drone_decision_theory.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+  <p><a href="https://colab.research.google.com/github/gtbook/robotics/blob/main/S75_drone_planning.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="trajectory-optimization">
 <h1><span class="section-number">7.5. </span>Trajectory Optimization<a class="headerlink" href="#trajectory-optimization" title="Permalink to this heading">#</a></h1>
 <blockquote>
-<div><p>We can use factor graphs to optimize over future trajectories, as well.</p>
+<div><p>We can optimize over future trajectories, as well.</p>
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/S75-Autonomous_camera_drone-05.jpg"><img alt="Splash image with steampunk drone in aggressive maneuver" class="align-center" src="_images/S75-Autonomous_camera_drone-05.jpg" style="width: 40%;" /></a>
-<p>In the previous section we saw how do use factor graphs for visual SLAM and structure from motion. These perception algorithms are typically run after we have gathered some visual information, and inform us about what happened in the past. But how can we plan for the future? We already saw that RRTs are useful paradigm to plan in a continuous, potentially high dimensional state space.</p>
-<p>In this section we will discuss a different method, which is optimal control. In particular, we will use <strong>trajectory optimization</strong>, to minimize the cost associated with the trajectory that we would like to execute in the future. These costs can be associated with staying away from obstacles, or other desirable properties like minimizing power consumption to preserve battery life. Finally, RRTs and trajectory optimization can be combined, where RRT finds a good “broad strokes” trajectory, and trajectory optimization smooths out and fine-tunes the final trajectory.</p>
-<p><strong>Jan ‘23: This section is still under construction, please check back later.</strong></p>
+<p>In the previous section we saw how use factor graphs for visual SLAM and structure from motion. These perception algorithms are typically run after the robot has gathered some visual information, and provide information about what happened in the past. But how can we plan for the future?</p>
+<p>We already saw that RRTs are a useful tool for planning in a continuous, potentially high dimensional state space. However, RRTs are not concerned with optimality. They aim for feasible paths, where sometimes feasibility means “collision-free” and sometimes it includes honoring the system dynamics. But if we want to achieve optimal trajectories in terms of time to goal, best use of energy, or minimum distance, we need to turn to other methods.</p>
+<p>In this section we will discuss optimization methods for control. In particular, we will use <strong>trajectory optimization</strong>, to minimize the cost associated with the trajectory to be executed in the future. These costs can be associated with staying away from obstacles, or other desirable properties like minimizing power consumption to preserve battery life. RRTs and trajectory optimization can be combined, where an RRT provides a good “broad strokes” trajectory, and a trajectory optimization smooths out and fine-tunes the final trajectory.</p>
+<p>We explain trajectory optimization using a very simple problem: how to get from point A to point B. This seems like an easy problem, as we all know the answer should be a straight line, right? But, it is not as easy for drones, as we have to account for the drone’s attitude, and we might have to accelerate and decelerate at the start and end points. Come to think of it, maybe we are already flying at a certain velocity at point A, and want to have a certain velocity at point B! Clearly, this is not as easy as it appears.</p>
+<p>Below we go about finding an optimal trajectory in steps:</p>
+<ul class="simple">
+<li><p>We explain how finding an optimal <em>path</em> is all we need to do as a first step.</p></li>
+<li><p>We discuss how to represent environments that contain obstacles using maps.</p></li>
+<li><p>We introduce factor graphs to find an optimal path in those maps.</p></li>
+<li><p>We show how a path solution can be converted into a <em>trajectory</em> using interpolation in time.</p></li>
+</ul>
+<p>Once we have developed methods for computing an optimal trajectory,
+we then show the broad outlines of building a simple cascaded controller that is able to execute these trajectories.
+Using the drone kinematics and dynamics models from Section 7.2, we  show how to implement such controllers and evaluate them in simulation.</p>
+<section id="optimizing-for-position">
+<h2><span class="section-number">7.5.1. </span>Optimizing for Position<a class="headerlink" href="#optimizing-for-position" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Position is all we need for the first step.</p>
+</div></blockquote>
+<p>In many applications, the drone configuration can effectively be decomposed into its position and orientation
+components: the position variables define a path through Euclidean space, and the orientation
+variables can be used to achieve the desired accelerations and velocities of the drone to follow
+that path (recall
+that a drone exerts thrust parallel to its body <span class="math notranslate nohighlight">\(z\)</span>-axis, so the orientation of the drone
+determines the direction of motion).
+We know from Section 7.2 that the drone’s attitude will <em>affect</em> position:
+pitch or roll will affect the velocity, which that will integrate into position.
+When given a continuous set of positions (i.e., a curve in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>) to get us from A to B, we can obtain the pitch, roll, and thrust trajectories to realize it.
+This very mechanism for controlling motion is also a source of complexity: a drone is <strong>under-actuated</strong>.
+We cannot directly control all six DOF, since we have only four rotors.</p>
+<p>Recall from Section 5.5 that a free <strong>path</strong> is defined as a continuous mapping of
+the unit interval to the free configuration space: <span class="math notranslate nohighlight">\(\gamma : [0,1] \rightarrow {\cal Q}_\mathrm{free}\)</span>,
+such that <span class="math notranslate nohighlight">\(q(0) = q_\mathrm{init}\)</span> and <span class="math notranslate nohighlight">\(q(1) = q_\mathrm{goal}\)</span>.
+This unit-length parameterization of the path hides the dynamics of the drone;
+there is no notion of time in this representation.
+When we choose a time parameterization of the path, the resulting <span class="math notranslate nohighlight">\(\gamma(t)\)</span> defines
+a <strong>trajectory</strong>, which fully defines the dynamics of the desired motion.
+For example, we can differntiate the trajectory with respect to time to obtain the instantaneous velocity.</p>
+<p>If we decouple position and orientation, the problem of finding a path for the position variables
+is to compute a continuous <span class="math notranslate nohighlight">\(\gamma: [0,1] \rightarrow \mathbb{R}^3\)</span>, i.e., we ignore the orientation of the drone.
+In this chapter, we will do so using an optimization-based approach.
+There are many ways one can do this, some better than others, but here strive for simplicity:
+we discretize the time interval in which we expect to fly, and solve for a corresponding sequence of positions
+<span class="math notranslate nohighlight">\((X_1, \dots X_K)\)</span> that satisfy our objectives. These objectives include</p>
+<ul class="simple">
+<li><p>a desired starting position,</p></li>
+<li><p>a desired goal position,</p></li>
+<li><p>an objective function to facilitate obstacle avoidance, and</p></li>
+<li><p>a smoothness objective that bounds velocity and/or acceleration.</p></li>
+</ul>
+<p>If these objectives are in conflict, we can assign them weights such that we trade off some against others. <em>Constrained optimization</em> techniques allow to set hard constraints and/or bounds, but we do not use those here. Instead, we opt for a simple nonlinear least-squares scheme that finds the path <span class="math notranslate nohighlight">\(X^*\)</span> that minimizes the following objective:</p>
+<div class="math notranslate nohighlight">
+\[
+X^* = \arg \min \sum_{k=1}^K \phi_k(X_k)^2  + \sum_{k=1}^{K-1} \psi_k(X_k, X_{k+1})^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_k\)</span> is the position at time, and <span class="math notranslate nohighlight">\(\phi_k(X_k)\)</span> and <span class="math notranslate nohighlight">\(\psi_k(X_k, X_{k+1})\)</span> are unary and binary objectives, respectively, that we want to minimize.
+Desired start and goal position, as well as obstacle avoidance are examples of unary objectives, while smoothness is a binary objective, which can be expressed in terms of the distance between successive points along the path.</p>
+<p>It will not come as any surprise that we can also use factor graph optimization to solve this optimization problem.
+The objective above is exactly the expression of a nonlinear factor graph, except that the factors now derive from objectives we want to minimize, rather than measurement errors. In the next section we work out in detail how to do so.</p>
+<p>Note that when we use this discrete optimization approach, the result is merely a set of points,
+not a continuous path. Below, we will show how to convert the discretized path into a smooth trajectory.</p>
+</section>
+<section id="occupancy-and-cost-maps">
+<h2><span class="section-number">7.5.2. </span>Occupancy and Cost Maps<a class="headerlink" href="#occupancy-and-cost-maps" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>We can use maps to encode costs to minimize.</p>
+</div></blockquote>
+<p>A popular approach to represent environments with obstacles is to use an <strong>occupancy map</strong>. An occupancy map is essentially a 2D array of cells, and we have already used this concept in Section 4.3.
+After we choose a certain resolution (for example, 10 cm by 10 cm), each cell in the map contains a probability for the presence of an obstacle. This concept can be extended to distinguish between various types of obstacles,
+for example if some obstacles pose more significant threat than others.</p>
+<p>This extended version of an occupancy can be further extended to a <strong>cost map</strong>,
+where areas with less hazardous obstacles (like tall grass) are considered less costly compared to more dangerous ones (like flying into a tree). Cost maps do not encode <em>occupancy</em> but rather encode the cost of being in a particular location. For our purposes, we will start directly with cost maps instead of creating true occupancy maps.</p>
+<p>To illustrate, let us consider creating a simple example cost map.
+We will begin by considering the 2D case, which corresponds to the case of a drone flying at constant altitude.
+In the <code class="docutils literal notranslate"><span class="pre">gtbook/drone</span></code> library, we have a function named <code class="docutils literal notranslate"><span class="pre">create_random_map</span></code>.
+This function requires as parameters the width <span class="math notranslate nohighlight">\(W\)</span>, height <span class="math notranslate nohighlight">\(H\)</span>, and the number of obstacles,
+and it creates a map that contains a random arrangement of obstacles. Width and height are given in meters, and the resolution is hardcoded at 10 cm. An optional parameter is a random seed, which allows for the reproduction of the exact experiment setup. Obstacles are generated with costs chosen randomly between 0.5 and 1.0.</p>
+<p>The following code snippet demonstrates how to generate a random map with 50 obstacles. Most of the environment has a cost of zero, and the obstacles are rendered in different shades of red based on their cost. Occasionally two obstacles overlap in which case the costs are added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a random cost map</span>
+<span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span>  <span class="c1"># 30m x 10m</span>
+<span class="n">cost_map</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">create_random_map</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">num_obstacles</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Cost map with randomly generated obstacles, at 10cm resolution.</span>
+<span class="c1">#| label: fig:obstacles</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cost_map</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d515f40c43026e12415c760aede5120f0bd3abd59ef5f2eb202396641831cc54.png" src="_images/d515f40c43026e12415c760aede5120f0bd3abd59ef5f2eb202396641831cc54.png" />
+</div>
+</div>
+<p>A disadvantage to the map shown above is that large areas of the map contain cells with zero cost,
+and therefore provide no information about locality of obstacles.
+The transition from obstacle-free space to obstacle-occupied space is abrupt.
+To improve the situation,  we can smooth the
+cost map with a differentiable kernel, like a Gaussian.
+We can use convolution to do this, just as we did for computer vision problems Section 5.4.
+A Gaussian kernel is a very popular choice for smoothing an image and removing noise, but here we wil use it to make the cost map “better behaved” for our purposes.</p>
+<p>To do this in code, we have to be a bit careful.
+We implemented maps in this section with PyTorch, following the image processing code in Section 5.4, and the cost map above is a torch tensor.
+In particular, the cost map is represented as a grayscale image 100 pixels tall and 300 pixels wide.
+Convolving an image with a kernel is relatively easy in PyTorch, although we need to juggle some tensor dimensions because by convention, <code class="docutils literal notranslate"><span class="pre">conv2d</span></code> operates on <span class="math notranslate nohighlight">\(\text{batch} \times \text{channel} \times \text{height} \times \text{width}\)</span> tensors. There is no need to deeply understand what is going on here, though.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># 0.5m standard deviation for the Gaussian kernel</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">21</span> <span class="c1"># 21x21 kernel is big enough to accommodate that standard deviation </span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">gaussian_kernel</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="c1"># multiply by 10 as map is 10cm resolution</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">cost_map</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>  <span class="c1"># Add batch and channel dimensions</span>
+<span class="n">blurred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Cost map blurred with 0.5 meter Gaussian kernel.</span>
+<span class="c1">#| label: fig:blurred</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e4769e4b38bdea81549d5877f1c5d307cadcd179003cec667beae9489798b88f.png" src="_images/e4769e4b38bdea81549d5877f1c5d307cadcd179003cec667beae9489798b88f.png" />
+</div>
+</div>
+</section>
+<section id="making-costs-truly-differentiable">
+<h2><span class="section-number">7.5.3. </span>Making Costs (Truly) Differentiable<a class="headerlink" href="#making-costs-truly-differentiable" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Continuous smoothing, not convolution.</p>
+</div></blockquote>
+<p>The discrete cost maps above are not differentiable; as we cross cell boundaries, the value of cost
+makes a discontinous jump.
+Because of this, the factors <span class="math notranslate nohighlight">\(\phi_k(X_k)\)</span> are not differentiable, which is a requirement of our optimization-based
+approach.</p>
+<p>To obtain truly differentiable factors, however, we can construct a custom Gaussian kernel at the <em>exact location</em>
+at which we want to evaluate the cost. Remember we are trying to minimize a <em>path</em>, by selecting a set of positions <span class="math notranslate nohighlight">\(X_k\)</span> at discrete time stamps <span class="math notranslate nohighlight">\(t_k\)</span>. It is important to realize that each <span class="math notranslate nohighlight">\(X_k\)</span> can take on arbitrary real values
+(not just integer coordinates of cells in the grid), and that the grid is an
+approximate, discretized representation of the world and the cost of moving through the world.</p>
+<p>In nonlinear optimization, the story is always the same: evaluate the cost <em>and</em> its derivatives at a current guess for all <span class="math notranslate nohighlight">\(X_k\)</span>, and then use the spatial derivatives of the cost at each discretized pose <span class="math notranslate nohighlight">\(X_k\)</span> to update the path
+to a lower cost solution. We will use a factor graph to evaluate the cost and its derivative, so it is important that this cost is smooth and differentiable.</p>
+<p>If we merely smooth a discretized cost map, as above, the result is still discretized, however smooth it looks to us. To get the <em>exact</em> value of the cost, and its derivatives, we can create a Gaussian kernel centered <em>exactly</em> at our current <em>continuous</em> position.
+The function <code class="docutils literal notranslate"><span class="pre">gaussian_filter</span></code> defined in <code class="docutils literal notranslate"><span class="pre">gtbook</span></code> does just that: it evaluates a single Gaussian kernel operator given a standard deviation, a continuous map location, and the cost map. The code below shows that this gives the exact same result as a lookup in the blurred image when given an integer coordinate, but it <em>also</em> works for non-integer coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy</span> <span class="o">=</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">)</span> <span class="c1"># point in map, in meters</span>
+<span class="n">uv</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">xy</span> <span class="c1"># continuous position in image</span>
+<span class="n">local_result</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">uv</span><span class="p">,</span> <span class="n">cost_map</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Local cost at </span><span class="si">{</span><span class="n">xy</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">local_result</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># When uv are at integer values, blurred image gives the same result:</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">local_result</span><span class="p">,</span> <span class="n">blurred</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">uv</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">uv</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cost at [7.5 5.3] is 0.135
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the derivatives we blur the vertical and horizontal gradient images, respectively.
+Because convolution is a linear operation,
+we can compute the directional derivatives of the Gaussian kernel, <em>or</em> we can apply the convolution on a gradient image. We choose the latter, by first using the Sobel operator we encountered in Section 5.4 to create gradient images:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute gradients:</span>
+<span class="n">sobel_u</span><span class="p">,</span> <span class="n">sobel_v</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">sobel_kernels</span><span class="p">()</span>
+<span class="n">grad_u</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">sobel_u</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
+<span class="n">grad_v</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">sobel_v</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Figure <a href="#fig:obstacles-2x2" data-reference-type="ref" data-reference="fig:obstacles-2x2">3</a> shows both cost map and its blurred version, as well as the (un-blurred) gradient images <code class="docutils literal notranslate"><span class="pre">grad_u</span></code> and <code class="docutils literal notranslate"><span class="pre">grad_v</span></code>. We can then combined these into one rank-3 tensor and evaluate the cost <em>and</em> derivatives in one operation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">cost_map</span><span class="p">,</span> <span class="n">grad_u</span><span class="p">,</span> <span class="n">grad_v</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">gtbook_drone</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">uv</span><span class="p">,</span> <span class="n">combined</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.135  0.004 -0.004]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives us exactly what we need: because we blur  the cost map, the vertical component of the gradient, and the horizontal component of the gradient, we obtain three numbers: the cost at the location <span class="math notranslate nohighlight">\(u,v\)</span>, the derivative of the cost with respect to a change in <span class="math notranslate nohighlight">\(u\)</span>, and the derivative of the cost with respect to a change in <span class="math notranslate nohighlight">\(v\)</span>. Next, we show how to use this super-power in the context of factor graph optimization.</p>
+</section>
+<section id="factor-graphs-for-trajectory-optimization">
+<h2><span class="section-number">7.5.4. </span>Factor Graphs for Trajectory Optimization<a class="headerlink" href="#factor-graphs-for-trajectory-optimization" title="Permalink to this heading">#</a></h2>
+<p>Now that we can evaluate cost and its derivatives at any location, we can create factors. Since occupancy maps or cost maps are not built into GTSAM, we use its facility to create a custom factor from arbitrary python code. A <code class="docutils literal notranslate"><span class="pre">gtsam.CustomFactor</span></code> just has a constructor that can take an arbitrary python callback function, along with a <code class="docutils literal notranslate"><span class="pre">Key</span></code> (and a noise model). At evaluation, the callback function gets a handle to the factor and a <code class="docutils literal notranslate"><span class="pre">gtsam.Values</span></code> object, and it does three things:</p>
+<ul class="simple">
+<li><p>check which variable is involved, by asking the factor;</p></li>
+<li><p>with that key, extract the current estimate from the passed in <code class="docutils literal notranslate"><span class="pre">Values</span></code>;</p></li>
+<li><p>calculate the cost, and if asked, its derivatives.</p></li>
+</ul>
+<p>The fact that we can do this for arbitrary python code is very convenient, and is used below to create cost factors that interrogate the cost map, using our localized Gaussian filter, and if asked, its derivatives:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cost_func</span><span class="p">(</span><span class="n">factor</span><span class="p">:</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">CustomFactor</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Values</span><span class="p">,</span> <span class="n">H</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cost function for the custom factor.&quot;&quot;&quot;</span>
+    <span class="c1"># Extract the Point2 variable using the key in the factor</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">atPoint2</span><span class="p">(</span><span class="n">factor</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">uv</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">point</span> <span class="c1"># Convert to map coordinates</span>
+
+    <span class="k">if</span> <span class="n">H</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="n">uv</span><span class="p">,</span> <span class="n">cost_map</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># If derivatives are needed, calculate them here:</span>
+        <span class="n">cost</span><span class="p">,</span> <span class="n">cost_x</span><span class="p">,</span> <span class="n">cost_y</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="n">uv</span><span class="p">,</span> <span class="n">combined</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">cost_x</span><span class="p">,</span> <span class="n">cost_y</span><span class="p">]])</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cost</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us discretize the path using <span class="math notranslate nohighlight">\(M=100\)</span> discrete time steps, using the keys <span class="math notranslate nohighlight">\(k\in 1...M\)</span>. We can define a start and goal point, and initialize the path as straight line. In other words, we initialize according to this formula:</p>
+<div class="math notranslate nohighlight">
+\[
+X_k = (1-\alpha)\ X_{\text{start}} + \alpha\ X_{\text{goal}} \text{~~~with~} \alpha = \frac{k-1}{M-1},
+\]</div>
+<p>Who knows, we might be lucky and hit no obstacles along the way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Number of points</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">goal</span> <span class="o">=</span> <span class="n">Point2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Point2</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">initial</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Values</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">M</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">initial</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">start</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">*</span><span class="n">goal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Initial path estimate plotted on the cost map.</span>
+<span class="c1">#| label: fig:initial</span>
+<span class="n">initial_path</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">gtsam</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">extractPoint2</span><span class="p">(</span><span class="n">initial</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cost_map</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">initial_path</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">initial_path</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/522d4b9ec10b7de55494b6ac6da40399802a200bc41ea6a74b99790d30452aea.png" src="_images/522d4b9ec10b7de55494b6ac6da40399802a200bc41ea6a74b99790d30452aea.png" />
+</div>
+</div>
+<p>Plotting this path on the cost map shows that, in this instance, we are not lucky, however: the path definitely passes through some obstacles. We can immediately create all obstacle cost factors now, and evaluate the cost to confirm that this is not a zero-cost path. Since these factors are nonlinear, we store them in a <code class="docutils literal notranslate"><span class="pre">gtsam.NonlinearFactorGraph</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obstacle_factors</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">NonlinearFactorGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">custom_factor</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">CustomFactor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">cost_func</span><span class="p">)</span>
+    <span class="n">obstacle_factors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">custom_factor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Graph has </span><span class="si">{</span><span class="n">obstacle_factors</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="si">}</span><span class="s2"> factors&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph has 100 factors
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cost profile along the path clearly shows the obstacles along the path. We can evaluate both the individual costs and the sum-of-squares cost <span class="math notranslate nohighlight">\(\sum\psi_k(X_k)^2\)</span> of a factor graph. The former gives us a cost profile along the way, and the latter represents an aggregate loss that we would like to minimize. We show the former as a bar graph below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Costs for the initial trajectory estimate.</span>
+<span class="c1">#| label: fig:initial-costs</span>
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="n">obstacle_factors</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">unwhitenedError</span><span class="p">(</span><span class="n">initial</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">)]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">costs</span><span class="p">,</span> <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cost&#39;</span><span class="p">,</span> <span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/25651feff581400bc764a9db5920051648fe921a2af61f60e3b566368352f916.png" src="_images/25651feff581400bc764a9db5920051648fe921a2af61f60e3b566368352f916.png" />
+</div>
+</div>
+<p>A complete path/trajectory optimization problem needs more than just obstacle factors, however. We also need to add start and goal factors, as well as smoothness factors.  Smoothness factors are implemented using a <code class="docutils literal notranslate"><span class="pre">gtsam.BetweenFactor</span></code>,
+and these help to ensure that the distance between successive points on the path is not too great.</p>
+<p>Start and goal factors impose penalties when the starting point, <span class="math notranslate nohighlight">\(X_1\)</span>, is not near to the current position,
+or the final point, <span class="math notranslate nohighlight">\(X_K\)</span>, is not near the goal position.
+Both of these can be implemented as simple “priors” on the variables with keys <span class="math notranslate nohighlight">\(k=1\)</span> and <span class="math notranslate nohighlight">\(k=100\)</span>. Note that a “prior factor” in GTSAM is just a quadratic cost, and in an estimation context that indeed corresponds to a Gaussian prior on a continuous point. In our current <em>planning</em> context we abuse that factor to simply have a quadratic cost at the path boundaries.</p>
+<p>Both types of factors are added in the code below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We start by copying the obstacle factors:</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">NonlinearFactorGraph</span><span class="p">()</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">obstacle_factors</span><span class="p">)</span>
+
+<span class="n">constrained2</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">noiseModel</span><span class="o">.</span><span class="n">Constrained</span><span class="o">.</span><span class="n">All</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># We *insist* on the start and goal points!</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">addPriorPoint2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">constrained2</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">addPriorPoint2</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">constrained2</span><span class="p">)</span>
+
+<span class="c1"># The strength of the smoothness factors is controlled by a `precision` value: higher is stronger.</span>
+<span class="c1"># Feel free to change the precision value below and see how the optimizer behaves:</span>
+<span class="n">smoothness_model</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">noiseModel</span><span class="o">.</span><span class="n">Isotropic</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gtsam</span><span class="o">.</span><span class="n">BetweenFactorPoint2</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Point2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">smoothness_model</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To optimize, we use a Levenberg Marquardt nonlinear optimizer. This optimizer, which we have encountered before in Section 6.4, linearizes the factors at every iteration and takes a cautious second-order minimization step. The “cautiousness” is governed by a parameter <span class="math notranslate nohighlight">\(\lambda\)</span> that essentially selects between gradient descent (<span class="math notranslate nohighlight">\(\lambda\)</span> high) and a second-order Gauss-Newton step (<span class="math notranslate nohighlight">\(\lambda\)</span> low).  In our potentially very non-linear cost landscape it is good practice to start of the optimizer with a relatively high value for <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial cost: </span><span class="si">{</span><span class="n">graph</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">initial</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">LevenbergMarquardtParams</span><span class="p">()</span>
+<span class="n">params</span><span class="o">.</span><span class="n">setlambdaInitial</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># params.setVerbosityLM(&quot;SUMMARY&quot;) # uncomment this line to see the LM progress</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">LevenbergMarquardtOptimizer</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final cost: </span><span class="si">{</span><span class="n">graph</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial cost: 0.236
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final cost: 0.064
+</pre></div>
+</div>
+</div>
+</div>
+<p>The optimizer is very fast, on the order of milliseconds for this example, so it can be used in an online planner that continuously re-plans as the cost map is updated with new information. When used for flying a drone, we can execute on the initial part of the trajectory and then immediately re-plan. This scheme is version of “model-predictive” control (MPC), which is frequently used in actual autonomous vehicles and drones.</p>
+<p>In our case, the optimizer finds a very nice path that navigates some tricky obstacle configurations, especially in the right half of the environment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Initial and final path plotted on the blurred cost map.</span>
+<span class="c1">#| label: fig:final</span>
+<span class="n">result_path</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">gtsam</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">extractPoint2</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">initial_path</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">initial_path</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">result_path</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">result_path</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f143b322d8d3d2d25a5a99301cc7cdea8f3e039b0df5acf522564f3ddd9e3dc9.png" src="_images/f143b322d8d3d2d25a5a99301cc7cdea8f3e039b0df5acf522564f3ddd9e3dc9.png" />
+</div>
+</div>
+<p>The cost profile along this final path is not entirely down to zero, as we have to navigate some tight obstacle configurations along the way. However, when plotted on the same scale it looks much better than for the initial path:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Costs for the optimized path.</span>
+<span class="c1">#| label: fig:final-costs</span>
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="n">obstacle_factors</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">unwhitenedError</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">)]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">costs</span><span class="p">,</span> <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cost&#39;</span><span class="p">,</span> <span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/56cdeb46d28fd037befca1d459474bc482f9fdef6f10a7d3843637cb360598dd.png" src="_images/56cdeb46d28fd037befca1d459474bc482f9fdef6f10a7d3843637cb360598dd.png" />
+</div>
+</div>
+<section id="exercise">
+<h3><span class="section-number">7.5.4.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Uncomment the line that calls <code class="docutils literal notranslate"><span class="pre">setVerbosityLM</span></code> in the optimization code to get a sense of how the optimization proceeds. Plot the result.</p>
+</section>
+</section>
+<section id="smoothing">
+<h2><span class="section-number">7.5.5. </span>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>From path to trajectory.</p>
+</div></blockquote>
+<p>We now convert our discretized optimal path to a discretized optimal <em>trajectory</em>.
+Here we will do so very simply by assigning a total execution time <span class="math notranslate nohighlight">\(T\)</span> to the path.
+If we impose uniform <span class="math notranslate nohighlight">\(\Delta t\)</span> between successive points in the path,
+we can associate a time <span class="math notranslate nohighlight">\(t_k = (k-1) \Delta t\)</span> to each point <span class="math notranslate nohighlight">\(X_k\)</span> in the path.</p>
+<p>We have to choose <span class="math notranslate nohighlight">\(T\)</span> judiciously.
+We may want to go fast, but we need to make sure trajectory respects the drone’s dynamic constraints:
+a drone can’t stop on a dime or go faster than certain limits.
+If we choose <span class="math notranslate nohighlight">\(T\)</span> to be small, we are asking the drone to fly fast, and we might hit thrust limits. If we choose <span class="math notranslate nohighlight">\(T\)</span> to be high, the drone will fly more slowly. For this example, we choose <span class="math notranslate nohighlight">\(T=20\)</span> as a reasonable compromise,
+as this should lead to an average velocity be a bit above 1 m/s.</p>
+<p>Once we have a discretized translational trajectory that is well behaved, we can “upgrade” it to include
+full position and attitude in two different ways: in advance, by solving a large optimization problem, or physically, in real-time, by using a tracking controller. The latter is what we will do below.</p>
+<p>Even after assigning <span class="math notranslate nohighlight">\(T\)</span>, we still have only a discretized trajectory – a  discrete set of points
+with corresponding time stamps. A discretized trajectory is not great.
+For example, it is not so easy to obtain accurate velocities and accelerations from a <em>discretized</em> trajectory. Below we use a class <code class="docutils literal notranslate"><span class="pre">SmoothTrajectory</span></code> which takes a discretized path and a given <span class="math notranslate nohighlight">\(T\)</span>, and fits a polynomial to
+the discretized path.
+The smoothness of the resulting trajectory is determined by a parameter, <span class="math notranslate nohighlight">\(N\)</span>,
+which defines the degree of the polynomial approximation.
+Details of this process, however, are beyond the scope of this book.</p>
+<p>The code to create this trajectory is shown below.
+Note that above we computed a trajectory for a fixed altitude.
+Here, we set the altitude to be a 1.5m. We choose <span class="math notranslate nohighlight">\(N=20\)</span>, which is a good trade off between computational cost and smoothness, but feel free to experiment with other values. Also, we set the flag <code class="docutils literal notranslate"><span class="pre">boundaries</span></code> to True, which enforces zero acceleration at the endpoints.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add height of 1.5 meters</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">extractPoint2</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">xy</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span> <span class="mf">1.5</span><span class="p">)])</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">smooth</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">SmoothTrajectory</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then evaluate and visualize the smoothed trajectory at <em>any</em> time t between 0 and T:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Discretized and smoothed trajectory.</span>
+<span class="c1">#| label: fig:smoothed</span>
+<span class="n">timestamps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span> <span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<span class="n">desired_rn</span> <span class="o">=</span> <span class="n">smooth</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="c1"># desired trajectory in navigation frame</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">result_path</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">result_path</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">smooth</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">smooth</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e4ed8f6cbe96109e5c9908d46ac67d03757a45aaca396163f4b23ba5028e1242.png" src="_images/e4ed8f6cbe96109e5c9908d46ac67d03757a45aaca396163f4b23ba5028e1242.png" />
+</div>
+</div>
+<p>Finally, it is instructive to inspect the velocity profiles as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: smoothed trajectory as time series.</span>
+<span class="c1">#| label: fig:smoothed-series</span>
+<span class="n">desired_vn</span> <span class="o">=</span> <span class="n">smooth</span><span class="o">.</span><span class="n">velocities</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="c1"># desired velocity in navigation frame</span>
+<span class="n">desired_an</span> <span class="o">=</span> <span class="n">smooth</span><span class="o">.</span><span class="n">accelerations</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="c1"># desired acceleration in navigation frame</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">pls</span><span class="o">.</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">desired_vn</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;vx&#39;</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">desired_vn</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;vy&#39;</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Velocity in x&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Velocity in y&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7ae7924167f6beb173b2b90f2cd4010c38b1591bf3c2574ff6a1539bb63f503c.png" src="_images/7ae7924167f6beb173b2b90f2cd4010c38b1591bf3c2574ff6a1539bb63f503c.png" />
+</div>
+</div>
+<p>You can see that, for our chosen T=20, the drone flies at velocities between 1 and 1.6 m/s, which is what we expected for T=20.</p>
+</section>
+<section id="a-virtual-vectored-thrust">
+<h2><span class="section-number">7.5.6. </span>A Virtual Vectored Thrust<a class="headerlink" href="#a-virtual-vectored-thrust" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>What we want, in theory…</p>
+</div></blockquote>
+<p>We control the position of the drone using a 3DOF vectored thrust input: thrust magnitude, roll, and pitch. The idea outlined here is a simplified version of the geometric controller in a <a class="reference external" href="https://doi.org/10.23919/ACC.2019.8815189">2019 paper by Gamadedara et al.</a>, but while the paper is fairly advanced, the idea is rather simple. Remember the translational equations of motion from Section 7.2:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\dot r^n = v^n \\
+m \dot v ^n = R^n_b f + m g^n
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> is the mass. Let us concentrate on the dynamics part: we <em>know</em> the acceleration <span class="math notranslate nohighlight">\(\dot v^n_d\)</span> we want from our planned trajectory, and gravity is a given. Hence, to make the drone do what we want, we can only change the quantity <span class="math notranslate nohighlight">\(R^n_b f\)</span>. Let us call that the <strong>vectored thrust</strong> <span class="math notranslate nohighlight">\(T^n\)</span>, where the superscript <span class="math notranslate nohighlight">\(n\)</span> denotes that the thrust is defined in the navigation frame. Then, to obtain the <em>desired</em> acceleration <span class="math notranslate nohighlight">\(\dot v^n_d\)</span>, the vectored thrust <span class="math notranslate nohighlight">\(T^n\)</span> has to satisfy</p>
+<div class="math notranslate nohighlight">
+\[
+T^n = m \dot v^n_d - m g^n.
+\]</div>
+<p>You can think of <span class="math notranslate nohighlight">\(T^n\)</span>, which is a 3D vector, as a thrust vector that pushes the drone toward where it needs to be. It can move the drone forwards or backwards by pitching appropriately, and left or right by rolling. But of course, at all times we need to make sure it cancels gravity as well, which explains the second term above. Even after gravity compensation, to gain or lose altitude, the thrust magnitude can be adjusted to make either happen. In control parlance, <span class="math notranslate nohighlight">\(T^n\)</span> can be thought of as a <em>virtual control input</em>.</p>
+<p>All of this is implemented in the <code class="docutils literal notranslate"><span class="pre">vectored_thrust</span></code> function below. It takes a <code class="docutils literal notranslate"><span class="pre">Drone</span></code> instance like the one we developed in Section 7.2, as well as a desired acceleration <span class="math notranslate nohighlight">\(a^n_d\)</span>. We redefined the <code class="docutils literal notranslate"><span class="pre">Drone</span></code> class in the <code class="docutils literal notranslate"><span class="pre">gtbook.drone</span></code> module so we can use it here, as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vectored_thrust</span><span class="p">(</span><span class="n">drone</span><span class="p">:</span><span class="n">Drone</span><span class="p">,</span> <span class="n">an_d</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the vectored thrust at timestamp k.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">drone</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="p">(</span><span class="n">an_d</span> <span class="o">-</span> <span class="n">drone</span><span class="o">.</span><span class="n">gn</span><span class="p">)</span>
+
+<span class="c1"># now calculate all the desired thrust vectors:</span>
+<span class="n">drone</span> <span class="o">=</span> <span class="n">Drone</span><span class="p">(</span><span class="n">rn</span><span class="o">=</span><span class="n">desired_rn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vn</span><span class="o">=</span><span class="n">desired_vn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nRb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Rot3</span><span class="p">(),</span> <span class="n">wb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Point3</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;desired_thrust[0] = </span><span class="si">{</span><span class="n">vectored_thrust</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span><span class="w"> </span><span class="n">desired_an</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;desired_thrust[-1] = </span><span class="si">{</span><span class="n">vectored_thrust</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span><span class="w"> </span><span class="n">desired_an</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>desired_thrust[0] = [ 0.25988069 -0.34011288  9.81      ]
+desired_thrust[-1] = [-0.18333472  0.19575027  9.81      ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: Smoothed trajectory with vectored thrust vectors.</span>
+<span class="c1">#| label: fig:vectored-thrust</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">desired_rn</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">desired_rn</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">desired_rn</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">Z</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Add thrust vectors as 3d arrows</span>
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vectored_thrust</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">desired_an</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">5</span><span class="p">)])</span>
+<span class="n">Tx</span><span class="p">,</span> <span class="n">Ty</span><span class="p">,</span> <span class="n">Tz</span> <span class="o">=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">vectors</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">vectors</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">vectors</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">Tx</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">Ty</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">z</span><span class="o">=</span><span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">Tz</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span>
+                               <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="c1"># Set aspect ratio based on W and Height of the map</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">scene</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">aspectratio</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">H</span><span class="o">/</span><span class="n">W</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="n">W</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Apply the camera settings to the layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">scene_camera</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eye</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f74dafd3933d37956de4d00e017c8faf701c8f120726f9b96625c94eb271933d.png" src="_images/f74dafd3933d37956de4d00e017c8faf701c8f120726f9b96625c94eb271933d.png" />
+</div>
+</div>
+<p>The figure above shows the desired vectored thrust for the optimized trajectory for our example. If you execute this section’s notebook on colab you would be able to rotate the figure and ascertain that all thrust vectors, even if they are of different lengths, all have exactly the same vertical projection magnitude. This is of course by design, to cancel out gravity in the absence of any requested vertical height changes.</p>
+</section>
+<section id="combining-open-loop-and-feedback-control">
+<h2><span class="section-number">7.5.7. </span>Combining Open Loop and Feedback Control<a class="headerlink" href="#combining-open-loop-and-feedback-control" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>What we want, in practice!</p>
+</div></blockquote>
+<p>The virtual thrust vector is an example of an <strong>open-loop control</strong> strategy.
+Open-loop controllers provide a predefined input to the system at each moment of time,
+without taking notice of how the system is actually performing.
+Given the planned trajectory, we <em>calculate</em> what we think should happen at every moment,
+and this is used as the control input. This could work <em>if</em> the drone perfectly tracks the planned trajectory;
+however, inevitably small errors will occur, maybe through wind, or model inaccuracies, or small variations in motor thrust. In addition, motors might hit their thrust limits and not be able to deliver the desired thrust completely. More importantly the pitch/roll controller (see below) that is supposed to deliver the thrust vector direction will have a small but consequential lag. All of these issues mean that errors <em>will</em> occur and the system will have to deal with them.</p>
+<p>To make this work, we need to incorporate <strong>feedback control</strong> terms that correct for tracking errors.
+Feedback, or closed-loop control, allows the input at each moment of time to be a function of the drone’s
+state.
+A typical approach is to define the control input as a function of the error
+between desired and observed behavior.
+In our case, we will use the position and velocity errors.
+We define
+the <em>desired</em> position <span class="math notranslate nohighlight">\(X_d\)</span> and <em>desired</em> velocity <span class="math notranslate nohighlight">\(\dot X_d\)</span> at any given time,
+which leads to the following controller:</p>
+<div class="math notranslate nohighlight">
+\[
+T^n = m \dot v^n_d - m g^n - K_x (X - X_d) - K_v (\dot X - \dot X_d)
+\]</div>
+<p>This now requires tuning two additional parameters, <span class="math notranslate nohighlight">\(K_x\)</span> and <span class="math notranslate nohighlight">\(K_v\)</span>, for the <em>proportional</em> and <em>derivative</em> control terms respectively (such a controller is called, appropriately, PD control).</p>
+<p>It <em>is</em> important to note that <span class="math notranslate nohighlight">\(X_d\)</span> and <span class="math notranslate nohighlight">\(\dot{X}_d\)</span> are exactly the optimal trajectory that we optimized for above. The subscript <span class="math notranslate nohighlight">\(d\)</span> denotes “desired” and strictly speaking these are functions of time <span class="math notranslate nohighlight">\(t\)</span>, as are the current position <span class="math notranslate nohighlight">\(X\)</span> and velocity <span class="math notranslate nohighlight">\(\dot X\)</span>. However, we chose to not clutter up the notation too much by explicitly omitting the time dependence.</p>
+<p>The proposed controller is relatively easy to implement in code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">thrust_controller</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">rn_d</span><span class="p">,</span> <span class="n">vn_d</span><span class="p">,</span> <span class="n">an_d</span><span class="p">,</span> <span class="n">Kx</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Kv</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the vectored thrust, adjusted for tracking errors, given desired rn/vn.&quot;&quot;&quot;</span>
+    <span class="n">Tn</span> <span class="o">=</span> <span class="n">vectored_thrust</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">an_d</span><span class="p">)</span>
+    <span class="n">Tn</span> <span class="o">-=</span> <span class="n">Kx</span> <span class="o">*</span> <span class="p">(</span><span class="n">drone</span><span class="o">.</span><span class="n">rn</span> <span class="o">-</span> <span class="n">rn_d</span><span class="p">)</span>
+    <span class="n">Tn</span> <span class="o">-=</span> <span class="n">Kv</span> <span class="o">*</span> <span class="p">(</span><span class="n">drone</span><span class="o">.</span><span class="n">vn</span> <span class="o">-</span> <span class="n">vn_d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Tn</span>
+
+<span class="c1"># Usage example:</span>
+<span class="n">Tn</span> <span class="o">=</span> <span class="n">thrust_controller</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">desired_rn</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">desired_vn</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">desired_an</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tn = </span><span class="si">{</span><span class="n">Tn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tn = [ 0.24371061 -0.25264278  9.81      ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can set up a small simulation to see how this controller behaves in practice, and in particular how the controller behaves for different values of <span class="math notranslate nohighlight">\(K_x\)</span> and <span class="math notranslate nohighlight">\(K_v\)</span>. These terms are called controller <strong>gains</strong>, and choosing them optimally is a standard problem in control theory.</p>
+<p>Below we use the same simulation strategy as in Section 7.2, and in particular use the <code class="docutils literal notranslate"><span class="pre">Drone</span></code> class that was defined there. In the simulation below we do not worry about the rotation yet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: 2D trajectory using virtual thrust control, on cost map.</span>
+<span class="c1">#| label: fig:outer-controller</span>
+<span class="n">K</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">desired_rn</span><span class="p">)</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="n">T</span> <span class="o">/</span> <span class="n">K</span> <span class="c1"># time between samples</span>
+
+<span class="c1"># Initialize the drone:</span>
+<span class="n">drone</span> <span class="o">=</span> <span class="n">Drone</span><span class="p">(</span><span class="n">rn</span><span class="o">=</span><span class="n">desired_rn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">vn</span><span class="o">=</span><span class="n">desired_vn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">nRb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Rot3</span><span class="p">(),</span> <span class="n">wb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Point3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># reserve space for the executed trajectory:</span>
+<span class="n">executed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># integrate forward</span>
+<span class="n">executed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">rn</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+    <span class="n">desired_Tn</span> <span class="o">=</span> <span class="n">thrust_controller</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">desired_rn</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">desired_vn</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">desired_an</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">drone</span><span class="o">.</span><span class="n">integrate_thrust_vector</span><span class="p">(</span><span class="n">desired_Tn</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>
+    <span class="n">drone</span><span class="o">.</span><span class="n">integrate_kinematics</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
+    <span class="n">executed</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">rn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plotting the executed trajectory below shows we are almost tracking perfectly now:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">executed</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">executed</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dc0185e571eaf4951bb1d282dd1ae51cfdf028cff573ed8e68d0a6e8ecc7381e.png" src="_images/dc0185e571eaf4951bb1d282dd1ae51cfdf028cff573ed8e68d0a6e8ecc7381e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: 3D trajectory using virtual thrust control.</span>
+<span class="c1">#| label: fig:outer-controller-3d</span>
+<span class="n">nRb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">),(</span><span class="n">K</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># level attitude</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">show_executed</span><span class="p">(</span><span class="n">desired_rn</span><span class="p">,</span> <span class="n">executed</span><span class="p">,</span> <span class="n">nRb</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">scene_camera</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eye</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/08fd370a772e12f0fdd3fcdbb074d0b0bf2fd26d3a5c05e3a1c64e25cb8e9de2.png" src="_images/08fd370a772e12f0fdd3fcdbb074d0b0bf2fd26d3a5c05e3a1c64e25cb8e9de2.png" />
+</div>
+</div>
+<section id="exercises">
+<h3><span class="section-number">7.5.7.1. </span>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Try setting the proportional and derivative constants <span class="math notranslate nohighlight">\(K_x\)</span> and <span class="math notranslate nohighlight">\(K_v\)</span> to 0, in isolation or both. Describe to yourself what happens.</p></li>
+<li><p>Try setting one or the other to a very high value (1000). What is happening then?</p></li>
+</ul>
+</section>
+</section>
+<section id="vectoring-using-fast-rotational-dynamics">
+<h2><span class="section-number">7.5.8. </span>Vectoring using Fast Rotational Dynamics<a class="headerlink" href="#vectoring-using-fast-rotational-dynamics" title="Permalink to this heading">#</a></h2>
+<p>While we cannot <em>instantaneously</em> produce the desired vectored thrust <span class="math notranslate nohighlight">\(T^n\)</span> at any given time, the dynamics of a quadrotor are fast enough that we can get rather close. Remember that the inertia matrix, which resists rotational acceleration, is typically small around the roll and pitch axes. Let us recall the the (approximate) rotational equations of motion, in the body frame <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\dot{R}^n_b	= R^n_b\hat{\omega}^b \\
+I \dot{\omega}^b \approx \tau^b
+\end{split}\]</div>
+<p>For typical drone configurations the inertial matrix <span class="math notranslate nohighlight">\(I\)</span> can be well approximated as <span class="math notranslate nohighlight">\(\text{diag}(I_{xx},I_{yy},I_zz)\)</span>, with the roll-pitch components <span class="math notranslate nohighlight">\(I_{xx}, I_{yy} &lt;&lt; I_{zz}\)</span>, the yaw component. Since <span class="math notranslate nohighlight">\(I_{xx}\)</span> and <span class="math notranslate nohighlight">\(I_{yy}\)</span> are small, and we have four powerful motors that can provide differential thrust very quickly, those dynamics are quite fast. Hence, if the attitude <span class="math notranslate nohighlight">\(R^n_b\)</span> does not yet align the total thrust <span class="math notranslate nohighlight">\(f\)</span> with the desired thrust vector <span class="math notranslate nohighlight">\(T^n\)</span>, we can quickly make it so by rotating.</p>
+<p>To figure out how to make the drone tilt, think of a video game where you are given a two axis controller and the screen displays the <em>current</em> orientation of the drone’s Z-axis <span class="math notranslate nohighlight">\(\hat k^n_b\)</span> and the <em>desired</em> thrust vector <span class="math notranslate nohighlight">\(T^n\)</span>. Your job is to align the two by rolling (rotate around the body X-axis <span class="math notranslate nohighlight">\(\hat x^n_b\)</span>) and pitching (rotating around the body Y-axis <span class="math notranslate nohighlight">\(\hat y^n_n\)</span>). Looking at the drone from the outside, in the navigation frame, this will actually be rather hard: typically the controls are fixed to the <em>body</em> frame, and at every step you need to perform a mental rotation to find the right action. That is why racing drone pilots much prefer to use a “first person view” or FPV display and controller.</p>
+<p>The mathematical equivalent of FPV for a control <em>algorithm</em> is to rotate everything into the body frame. Taking the desired thrust vector <span class="math notranslate nohighlight">\(T^n\)</span> and multiplying it with the transpose of the attitude <span class="math notranslate nohighlight">\(R^n_b\)</span> (which is the inverse rotation, recall Sections 6.1 and 7.1) yields the desired thrust vector <span class="math notranslate nohighlight">\(T^b\)</span> in the body frame:</p>
+<div class="math notranslate nohighlight">
+\[
+T^b = (R^n_b)^T T^n.
+\]</div>
+<p>Let us examine each component of this three-vector <span class="math notranslate nohighlight">\(T^b\)</span>, in the body frame, in turn. Let us name the 3 components <span class="math notranslate nohighlight">\(T_F\)</span>,  <span class="math notranslate nohighlight">\(T_L\)</span>, and <span class="math notranslate nohighlight">\(T_U\)</span>, as we are using the XYZ = Forward-Left-Up convention.</p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(T_F\)</span> is <em>positive</em>, the desired thrust vector is ahead of the drone, and we should <em>pitch</em> forward. Looking from the tip of the Left/<span class="math notranslate nohighlight">\(y\)</span>-axis, this corresponds to a counter-clockwise, i.e., positive angular velocity <span class="math notranslate nohighlight">\(\omega^b_y&gt;0\)</span> around the Left/<span class="math notranslate nohighlight">\(y\)</span>-axis Likewise, if <span class="math notranslate nohighlight">\(T_F\)</span> is <em>negative</em>, we should rotate clockwise around the <span class="math notranslate nohighlight">\(y\)</span>-axis, i.e., <span class="math notranslate nohighlight">\(\omega^b_y&gt;0\)</span>. This inspires a control law for the torque around Y as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+    \tau^b_y = K_F T_F;
+    \]</div>
+</li>
+<li><p>When <span class="math notranslate nohighlight">\(T_L\)</span> is positive, the desired thrust vector is to the left, and we should <em>roll</em>. Looking from the tip of the Forward/<span class="math notranslate nohighlight">\(x\)</span>-axis, this corresponds to a clock-wise, i.e., <em>negative</em> angular velocity <span class="math notranslate nohighlight">\(\omega^b_x\)</span>. This inspires a control law for the torque around X as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+    \tau^b_x = - K_L T_L;
+    \]</div>
+</li>
+<li><p>The component <span class="math notranslate nohighlight">\(T_U\)</span> along the body Up/<span class="math notranslate nohighlight">\(z\)</span>-axis is a good approximation of the total thrust we need, and in fact is exactly correct if the thrust vector is already aligned correctly. So, we set</p>
+<div class="math notranslate nohighlight">
+\[
+    f = T_U
+    \]</div>
+</li>
+</ul>
+<p>The three control laws above constitute a simple yet effective controller for the drone, with <span class="math notranslate nohighlight">\(K_F\)</span> and <span class="math notranslate nohighlight">\(K_L\)</span> constants that govern how aggressive the controller is.
+The torque control laws above correspond to simple <strong>proportional</strong> controllers in control theory, with <span class="math notranslate nohighlight">\(-T_F\)</span> and <span class="math notranslate nohighlight">\(T_L\)</span> acting as errors to be driven to zero.<br />
+The higher the values of <span class="math notranslate nohighlight">\(K_F\)</span> and <span class="math notranslate nohighlight">\(K_L\)</span>, the faster the controller will try to remove those errors, but this could also lead to oscillations and even instabilities. While this is out of scope for the current text, we can obtain a more stable aggressive controller by adding a derivative term as well that is a function of the angular velocity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">attitude_controller</span><span class="p">(</span><span class="n">nT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">nRb</span><span class="p">:</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Rot3</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the vectored thrust for the desired thrust vector, given in nav frame.&quot;&quot;&quot;</span>
+    <span class="c1"># Rotate the desired thrust vector to body frame:</span>
+    <span class="n">T_F</span><span class="p">,</span> <span class="n">T_L</span><span class="p">,</span> <span class="n">T_U</span> <span class="o">=</span> <span class="n">nRb</span><span class="o">.</span><span class="n">unrotate</span><span class="p">(</span><span class="n">nT</span><span class="p">)</span> <span class="c1"># equivalent to nRb.inverse().rotate(nT)</span>
+
+    <span class="c1"># Calculate the desired roll and pitch torques:</span>
+    <span class="n">tau_x</span> <span class="o">=</span> <span class="o">-</span> <span class="n">K</span> <span class="o">*</span> <span class="n">T_L</span>
+    <span class="n">tau_y</span> <span class="o">=</span> <span class="n">K</span> <span class="o">*</span> <span class="n">T_F</span>
+
+    <span class="c1"># Return alongside total thrust to be commanded:</span>
+    <span class="k">return</span> <span class="n">tau_x</span><span class="p">,</span> <span class="n">tau_y</span><span class="p">,</span> <span class="n">T_U</span>
+
+<span class="n">nRb</span> <span class="o">=</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Rot3</span><span class="p">()</span> <span class="c1"># Assume the robot is initially level</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vectors[0] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;control[0] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">attitude_controller</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">nRb</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vectors[0] = [ 0.26 -0.34  9.81]
+control[0] = [0.034 0.026 9.81 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example, with <span class="math notranslate nohighlight">\(K_F = K_L = K = 0.1\)</span>, illustrates the behavior: we want to increase the thrust <span class="math notranslate nohighlight">\(T_F\)</span> in the <span class="math notranslate nohighlight">\(x\)</span> direction to <span class="math notranslate nohighlight">\(0.26\)</span>, so we will positively <em>pitch</em> around the Y-axis: counter-clockwise, pointing the <span class="math notranslate nohighlight">\(z\)</span>-axis forward. Likewise, we want a thrust towards the right (<span class="math notranslate nohighlight">\(T_^_L-0.34\)</span>), so we need to roll counter-clockwise, as well, around the Forward/<span class="math notranslate nohighlight">\(x\)</span>-axis.</p>
+<section id="calculating-motor-thrust-vectors">
+<h3><span class="section-number">7.5.8.1. </span>Calculating Motor Thrust Vectors<a class="headerlink" href="#calculating-motor-thrust-vectors" title="Permalink to this heading">#</a></h3>
+<p>Creating the requested torque and thrust by the control law is done by adjusting the individual motor thrusts <span class="math notranslate nohighlight">\(f_i\)</span>. Recalling the force-torque equation in Section 7.2, if we ensure <span class="math notranslate nohighlight">\(f_{1} + f_{3} = f_{2} + f_{4}\)</span> we obtain :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\tau^b = l \begin{bmatrix}
+f_{1}-f_{2}-f_{3}+f_{4}\\
+f_{1}+f_{2}-f_{3}-f_{4}\\
+0
+\end{bmatrix}
+\end{split}\]</div>
+<p>The thrust vector magnitude <span class="math notranslate nohighlight">\(F^b_z = f\)</span> can be adjusted quickly as well:</p>
+<div class="math notranslate nohighlight">
+\[
+f = f_1 + f_2 + f_3 + f_4.
+\]</div>
+<p>and hence we now have four equations in four unknowns. Solving for the forces yields</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f_1 = 0.25 \left( f + \tau_x/l + \tau_y/l \right) \\
+f_2 = 0.25 \left( f - \tau_x/l + \tau_y/l \right) \\
+f_3 = 0.25 \left( f + \tau_x/l - \tau_y/l \right) \\
+f_4 = 0.25 \left( f - \tau_x/l - \tau_y/l \right)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l\)</span> is the arm length, and <span class="math notranslate nohighlight">\(\tau_x\)</span> and <span class="math notranslate nohighlight">\(\tau_y\)</span> are the roll and pitch moment, respectively.</p>
+<p>The piece of code below implements this; however, this simplified code does not make any guarantees on not hitting torque limits. Hence, in practice more sophisticated approaches are used return a solution subject to actual control limits, while still trying to deliver some desired torques and/or thrust.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">control_to_motor_speeds</span><span class="p">(</span><span class="n">tau_x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tau_y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.002</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the desired torques and thrust to motor speeds.&quot;&quot;&quot;</span>
+    <span class="c1"># Calculate the motor speeds:</span>
+    <span class="n">f_1</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="n">tau_x</span><span class="o">/</span><span class="n">L</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">f_2</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">tau_x</span><span class="o">/</span><span class="n">L</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">f_3</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="n">tau_x</span><span class="o">/</span><span class="n">L</span> <span class="o">-</span> <span class="n">tau_y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">f_4</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">tau_x</span><span class="o">/</span><span class="n">L</span> <span class="o">-</span> <span class="n">tau_y</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+
+    <span class="c1"># Return as a tuple</span>
+    <span class="k">return</span> <span class="n">f_1</span><span class="p">,</span> <span class="n">f_2</span><span class="p">,</span> <span class="n">f_3</span><span class="p">,</span> <span class="n">f_4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;motor_speeds[-1] = </span><span class="si">{</span><span class="n">control_to_motor_speeds</span><span class="p">(</span><span class="o">*</span><span class="n">attitude_controller</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">nRb</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>motor_speeds[-1] = (2.67052360380764, 2.503598033787886, 2.401401966212046, 2.2344763961922918)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="code-example">
+<h2><span class="section-number">7.5.9. </span>Code Example<a class="headerlink" href="#code-example" title="Permalink to this heading">#</a></h2>
+<p>To simulate both controllers working together, we now also need to account for attitude.
+The code below does this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">delta_t</span><span class="o">/</span><span class="mi">10</span>
+
+<span class="c1"># Reserve space for the executed trajectory, including attitude:</span>
+<span class="n">executed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">nRb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># We again initialize at the desired position and velocity for k=0,</span>
+<span class="c1"># and (as before) have the drone face east (X-axis in navigation frame) initially:</span>
+<span class="n">drone</span> <span class="o">=</span> <span class="n">Drone</span><span class="p">(</span><span class="n">rn</span><span class="o">=</span><span class="n">desired_rn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">vn</span><span class="o">=</span><span class="n">desired_vn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">nRb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Rot3</span><span class="p">(),</span> <span class="n">wb</span><span class="o">=</span><span class="n">gtsam</span><span class="o">.</span><span class="n">Point3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">nRb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span> <span class="c1"># Now also store attitude</span>
+
+<span class="c1"># integrate forward</span>
+<span class="n">executed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">rn</span>
+<span class="n">nRb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">nRb</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+    <span class="n">desired_Tn</span> <span class="o">=</span> <span class="n">thrust_controller</span><span class="p">(</span><span class="n">drone</span><span class="p">,</span> <span class="n">desired_rn</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">desired_vn</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">desired_an</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+    <span class="c1"># Inner loop: a fast roll/pitch controller:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="c1"># Calculate roll/pitch/thrust controls:</span>
+        <span class="n">tau_x</span><span class="p">,</span> <span class="n">tau_y</span><span class="p">,</span> <span class="n">T_U</span> <span class="o">=</span> <span class="n">attitude_controller</span><span class="p">(</span><span class="n">desired_Tn</span><span class="p">,</span> <span class="n">drone</span><span class="o">.</span><span class="n">nRb</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        
+        <span class="c1"># clip thrust to be between 0 and 20 Newtons:</span>
+        <span class="n">T_U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">T_U</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+        <span class="c1"># Integrate both dynamics and kinematics in one step:</span>
+        <span class="n">drone</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">T_U</span><span class="p">,</span> <span class="n">gtsam</span><span class="o">.</span><span class="n">Point3</span><span class="p">(</span><span class="n">tau_x</span><span class="p">,</span> <span class="n">tau_y</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
+
+    <span class="n">executed</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">rn</span>
+    <span class="n">nRb</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">drone</span><span class="o">.</span><span class="n">nRb</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that in the code we now have an outer and an inner loop. The outer loop is for the “slow” translational dynamics, whereas the inner loop simulates the “fast” attitude dynamics. Such a <strong>cascaded controller</strong> is a typical design choice for drone applications.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: 2D trajectory using cascaded controller, on cost map.</span>
+<span class="c1">#| label: fig:cascaded-control-3d</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:</span><span class="n">K</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">desired_rn</span><span class="p">[:</span><span class="n">K</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">executed</span><span class="p">[:</span><span class="n">K</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">executed</span><span class="p">[:</span><span class="n">K</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/86337b0275697be53738b38203d2da4afdac31ca3aa0d2d464f2bd86411caf22.png" src="_images/86337b0275697be53738b38203d2da4afdac31ca3aa0d2d464f2bd86411caf22.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#| caption: 3D trajectory with cascaded controller.</span>
+<span class="c1">#| label: fig:cascaded-control-3d</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">gtbook_drone</span><span class="o">.</span><span class="n">show_executed</span><span class="p">(</span><span class="n">desired_rn</span><span class="p">,</span> <span class="n">executed</span><span class="p">,</span> <span class="n">nRb</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">scene_camera</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eye</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aed2e39eecb4976c5c018d656f232219c59e45d1eab33ed4e65c2968db28c858.png" src="_images/aed2e39eecb4976c5c018d656f232219c59e45d1eab33ed4e65c2968db28c858.png" />
+</div>
+</div>
+<p>From the 3D plot above we see that the controller tracks the desired trajectory quite well.</p>
+<section id="id1">
+<h3><span class="section-number">7.5.9.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Try playing with the gain <span class="math notranslate nohighlight">\(K\)</span> of the attitude controller. What do you observe. Any theories?</p>
+</section>
+</section>
+<section id="planning-and-controlling-yaw">
+<h2><span class="section-number">7.5.10. </span>Planning and Controlling Yaw<a class="headerlink" href="#planning-and-controlling-yaw" title="Permalink to this heading">#</a></h2>
+<p>Controlling yaw is a crucial aspect in the design of FPV or camera drones, as it enables a drone to point in a specific direction. Since often the drone is equipped with a forward-looking camera, this is obviously useful.</p>
+<p>A simple yaw controller can be implemented to address this, but we will not discuss it in detail here. We would need to also plan the viewing direction of the drone, which involves setting up another objective etc. For example, we could try to ensures that the drone remains pointed at a particular object, e.g., for tasks like aerial photography or inspection.</p>
+<p>Yaw control presents more challenges compared to roll/pitch control. This is because yaw involves imparting a moment around the Z/Up axis, which cannot be done using differential force control. Rather, a moment around Z is created by the moments of the rotors themselves: two spin clockwise, and two others counter-clockwise. By making one or the other pair spin faster, a net moment is imparted. However, the moments so produced are much smaller.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -502,7 +1368,41 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-for-position">7.5.1. Optimizing for Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#occupancy-and-cost-maps">7.5.2. Occupancy and Cost Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-costs-truly-differentiable">7.5.3. Making Costs (Truly) Differentiable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-for-trajectory-optimization">7.5.4. Factor Graphs for Trajectory Optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.5.4.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">7.5.5. Smoothing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-virtual-vectored-thrust">7.5.6. A Virtual Vectored Thrust</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-open-loop-and-feedback-control">7.5.7. Combining Open Loop and Feedback Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.5.7.1. Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectoring-using-fast-rotational-dynamics">7.5.8. Vectoring using Fast Rotational Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-motor-thrust-vectors">7.5.8.1. Calculating Motor Thrust Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-example">7.5.9. Code Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.5.9.1. Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-and-controlling-yaw">7.5.10. Planning and Controlling Yaw</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -547,8 +1447,8 @@ By Frank Dellaert and Seth Hutchinson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
